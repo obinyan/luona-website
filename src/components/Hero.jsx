@@ -44,7 +44,7 @@ const HeroSection = () => {
   }, [shoes.length]);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden pt-6 pb-20">
+    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden  py-12">
 
       {/* Background logo image (faded, centered) */}
       <div
@@ -56,7 +56,7 @@ const HeroSection = () => {
 
         
         {/* Top Heading - inline */}
-        <div className="flex items-center justify-center mb-4 md:mb-4 space-x-3">
+        <div className="flex items-center justify-center mb-4 md:mb-8 space-x-3">
           <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-black">
             Wear LUONA...
           </h1>
@@ -66,8 +66,8 @@ const HeroSection = () => {
         </div>
 
         {/* Slideshow */}
-        <div className="relative w-full max-w-4xl mb-4 md:mb-4">
-          <div className="relative overflow-hidden rounded-2xl bg-white/30 backdrop-blur-sm border border-white/20 shadow-2xl">
+        <div className="relative w-full max-w-4xl mb-4 md:mb-8">
+          <div className="relative overflow-hidden  bg-white/30  border border-white/20">
             <div
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
