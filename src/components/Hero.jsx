@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
@@ -79,15 +79,14 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col justify-center items-center">
         
         {/* Top Heading */}
-        <div className="flex items-center justify-center mb-12 md:mb-16 space-x-3">
-            <h1 className="text-3xl md:text-2xl lg:text-3xl font-bold text-black">
-                Wear LUONA...
-            </h1>
-            <p className="text-xl md:text-2xl lg:text-3xl font-light text-black">
-                the emblem of Kings
-            </p>
+        <div className="text-center mb-12 md:mb-16">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+            Wear LUONA...
+          </h1>
+          <p className="text-xl md:text-2xl lg:text-3xl text-gray-700 font-light">
+            the emblem of Kings
+          </p>
         </div>
-
 
         {/* Slideshow Container */}
         <div className="relative w-full max-w-4xl mb-12 md:mb-16">
@@ -165,18 +164,11 @@ const HeroSection = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center">
-          <button className="group inline-flex items-center px-8 py-4 md:px-10 md:py-5 bg-transparent border-2 border-gray-900 text-gray-900 font-semibold text-lg md:text-xl rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+        <div className="text-center z-20 relative">
+          <button className="group inline-flex items-center px-8 py-4 md:px-10 md:py-5 bg-transparent border-2 border-black text-black font-semibold text-lg md:text-xl rounded-full hover:bg-black hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
             <span className="mr-3">Shop Now</span>
             <ArrowRight className="w-5 h-5 md:w-6 md:h-6 transform group-hover:translate-x-1 transition-transform duration-200" />
           </button>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
-          </div>
         </div>
       </div>
 
