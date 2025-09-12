@@ -44,17 +44,16 @@ const HeroSection = () => {
   }, [shoes.length]);
 
   return (
-    <section
-      className="relative min-h-screen overflow-hidden flex items-center justify-center
-      bg-gradient-to-br from-gray-50 to-white"
-    >
+    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden pt-16">
+
       {/* Background logo image (faded, centered) */}
       <div
         className="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-5 pointer-events-none"
         style={{ backgroundImage: "url('/logo.png')" }} // replace with your actual logo file in public/
       ></div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col justify-center items-center">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col justify-center items-center">
+
         
         {/* Top Heading - inline */}
         <div className="flex items-center justify-center mb-12 md:mb-16 space-x-3">
