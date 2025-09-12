@@ -44,7 +44,7 @@ const HeroSection = () => {
   }, [shoes.length]);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden  py-12">
+    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden pt-12 pb-8">
 
       {/* Background logo image (faded, centered) */}
       <div
