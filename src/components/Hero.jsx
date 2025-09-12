@@ -93,11 +93,11 @@ const HeroSection = () => {
                   <div className="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
                     {/* Slide Image */}
                     <div className="relative group">
-                      <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
                       <img
                         src={slide.image}
                         alt={slide.alt}
-                        className="relative w-96 h-72 md:w-96 md:h-72 object-contain drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
+                        className="relative w-96 h-72 md:w-106 md:h-82 object-contain drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
 
