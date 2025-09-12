@@ -63,8 +63,8 @@ const HeroSection = () => {
     <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden pt-20 pb-16">
       {/* Background Logo Image (faded) */}
       <div
-        className="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-5 pointer-events-none"
-        style={{ backgroundImage: "url('/logo main 2.png')" }} // put logo in /public
+        className="absolute inset-0 bg-center bg-no-repeat opacity-5 pointer-events-none bg-[length:80%]"
+        style={{ backgroundImage: "url('/logo main 2.png')" }}
       ></div>
 
       <div className="relative z-10 container mx-auto px-3 sm:px-4 lg:px-6 min-h-screen flex flex-col justify-center items-center">
