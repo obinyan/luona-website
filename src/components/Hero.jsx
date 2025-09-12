@@ -49,7 +49,7 @@ const HeroSection = () => {
       {/* Background logo image (faded, centered) */}
       <div
         className="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-5 pointer-events-none"
-        style={{ backgroundImage: "url('/logo.png')" }} // replace with your actual logo file in public/
+        style={{ backgroundImage: "url('/logo.jpg')" }} // replace with your actual logo file in public/
       ></div>
 
       <div className="relative z-10 container mx-auto px-3 sm:px-4 lg:px-6 min-h-screen flex flex-col justify-center items-center">
