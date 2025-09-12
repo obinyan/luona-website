@@ -1,5 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Search, ShoppingBag, Menu, Phone, Mail, MessageCircle, ChevronDown, X } from 'lucide-react';
+"use client";
+
+import React, { useState, useEffect, useRef } from "react";
+import { Search, ShoppingBag, Menu, Phone, Mail, MessageCircle, ChevronDown, X } from "lucide-react";
+
 
 const Navbar = () => {
   const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false);
