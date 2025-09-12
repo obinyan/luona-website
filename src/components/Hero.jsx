@@ -14,7 +14,7 @@ const HeroSection = () => {
       alt: "More Style",
       title: "MORE",
       highlight: "STYLE",
-      subtitle: "Where fashion meets timeless elegance",
+      
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ const HeroSection = () => {
       alt: "More Comfort",
       title: "MORE",
       highlight: "COMFORT",
-      subtitle: "Shoes crafted for your everyday ease",
+      
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ const HeroSection = () => {
       alt: "Affordable Luxury",
       title: "AFFORDABLE",
       highlight: "LUXURY",
-      subtitle: "Premium shoes without the premium price",
+      
     },
     {
       id: 4,
@@ -38,7 +38,7 @@ const HeroSection = () => {
       alt: "Built to Last",
       title: "BUILT TO",
       highlight: "LAST",
-      subtitle: "Durability and craftsmanship in every step",
+      
     },
     {
       id: 5,
@@ -46,7 +46,7 @@ const HeroSection = () => {
       alt: "Built for Kings",
       title: "BUILT FOR",
       highlight: "KINGS",
-      subtitle: "Walk like royalty, always",
+      
     },
   ];
 
@@ -60,11 +60,11 @@ const HeroSection = () => {
   }, [slides.length]);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden pt-12 pb-16">
+    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden pt-16 pb-16">
       {/* Background Logo Image (faded) */}
       <div
         className="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-5 pointer-events-none"
-        style={{ backgroundImage: "url('/logo-main-2.png')" }} // put logo in /public
+        style={{ backgroundImage: "url('/logo main 2.png')" }} // put logo in /public
       ></div>
 
       <div className="relative z-10 container mx-auto px-3 sm:px-4 lg:px-6 min-h-screen flex flex-col justify-center items-center">
@@ -80,7 +80,7 @@ const HeroSection = () => {
 
         {/* Slideshow */}
         <div className="relative w-full max-w-5xl mb-10">
-          <div className="relative overflow-hidden bg-white/30 border border-white/20 rounded-2xl shadow-xl">
+          <div className="relative overflow-hidden bg-white/30">
             <div
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -97,7 +97,7 @@ const HeroSection = () => {
                       <img
                         src={slide.image}
                         alt={slide.alt}
-                        className="relative w-80 h-60 md:w-96 md:h-72 object-contain drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
+                        className="relative w-96 h-72 md:w-96 md:h-72 object-contain drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
 
@@ -109,7 +109,7 @@ const HeroSection = () => {
                         </span>
                       </div>
                       <div className="mb-6">
-                        <span className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 tracking-tight">
+                        <span className="text-4xl md:text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight">
                           {slide.highlight}
                         </span>
                       </div>
@@ -137,3 +137,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+ 
