@@ -111,7 +111,7 @@ const Navbar = () => {
                 <img 
                   src="/logo.jpg" 
                   alt="Luona Logo" 
-                  className="h-10 w-auto"
+                  className="h-16 w-auto"
                 />
               </div>
 

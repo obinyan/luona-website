@@ -10,7 +10,7 @@ const HeroSection = () => {
   const slides = [
     {
       id: 1,
-      image: "/shoes/more-style.png", // replace with your real image
+      image: "/mules 11.png", // replace with your real image
       alt: "More Style",
       title: "MORE",
       highlight: "STYLE",
@@ -18,7 +18,7 @@ const HeroSection = () => {
     },
     {
       id: 2,
-      image: "/shoes/more-comfort.png",
+      image: "/brogues 17.png",
       alt: "More Comfort",
       title: "MORE",
       highlight: "COMFORT",
@@ -26,7 +26,7 @@ const HeroSection = () => {
     },
     {
       id: 3,
-      image: "/shoes/affordable-luxury.png",
+      image: "/mules 10.png",
       alt: "Affordable Luxury",
       title: "AFFORDABLE",
       highlight: "LUXURY",
@@ -34,7 +34,7 @@ const HeroSection = () => {
     },
     {
       id: 4,
-      image: "/shoes/built-to-last.png",
+      image: "/brogues 17.png",
       alt: "Built to Last",
       title: "BUILT TO",
       highlight: "LAST",
@@ -42,7 +42,7 @@ const HeroSection = () => {
     },
     {
       id: 5,
-      image: "/shoes/built-for-kings.png",
+      image: "/mules 11.png",
       alt: "Built for Kings",
       title: "BUILT FOR",
       highlight: "KINGS",
@@ -60,7 +60,7 @@ const HeroSection = () => {
   }, [slides.length]);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden pt-16 pb-16">
+    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden pt-18 pb-16">
       {/* Background Logo Image (faded) */}
       <div
         className="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-5 pointer-events-none"
@@ -70,7 +70,7 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-3 sm:px-4 lg:px-6 min-h-screen flex flex-col justify-center items-center">
         {/* Top Heading (inline) */}
         <div className="flex items-center justify-center mb-6 md:mb-10 space-x-3">
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-black">
+          <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-black">
             Wear LUONA...
           </h1>
           <p className="text-xl md:text-2xl lg:text-3xl font-light text-black">
