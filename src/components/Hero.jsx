@@ -69,7 +69,7 @@ const HeroSection = () => {
 
       <div className="relative z-10 container mx-auto px-3 sm:px-4 lg:px-6 min-h-screen flex flex-col justify-center items-center">
         {/* Top Heading (inline) */}
-        <div className="flex items-center justify-center md:mb-10 space-x-3">
+        <div className="flex items-center justify-center pt-12 md:mb-10 space-x-3">
           <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-black">
             Wear LUONA...
           </h1>
