@@ -6,57 +6,70 @@ import { ArrowRight } from "lucide-react";
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Sample shoe data
-  const shoes = [
+  // Slide Data (replace image paths with your actual files in /public/shoes/)
+  const slides = [
     {
       id: 1,
-      image: "/api/placeholder/400/300",
-      alt: "Brown Leather Loafer",
-      style: "Classic Comfort",
+      image: "/shoes/more-style.png", // replace with your real image
+      alt: "More Style",
+      title: "MORE",
+      highlight: "STYLE",
+      subtitle: "Where fashion meets timeless elegance",
     },
     {
       id: 2,
-      image: "/api/placeholder/400/300",
-      alt: "Black Oxford Shoes",
-      style: "Elegant Design",
+      image: "/shoes/more-comfort.png",
+      alt: "More Comfort",
+      title: "MORE",
+      highlight: "COMFORT",
+      subtitle: "Shoes crafted for your everyday ease",
     },
     {
       id: 3,
-      image: "/api/placeholder/400/300",
-      alt: "Brown Moccasin",
-      style: "Premium Quality",
+      image: "/shoes/affordable-luxury.png",
+      alt: "Affordable Luxury",
+      title: "AFFORDABLE",
+      highlight: "LUXURY",
+      subtitle: "Premium shoes without the premium price",
     },
     {
       id: 4,
-      image: "/api/placeholder/400/300",
-      alt: "Leather Brogues",
-      style: "Timeless Style",
+      image: "/shoes/built-to-last.png",
+      alt: "Built to Last",
+      title: "BUILT TO",
+      highlight: "LAST",
+      subtitle: "Durability and craftsmanship in every step",
+    },
+    {
+      id: 5,
+      image: "/shoes/built-for-kings.png",
+      alt: "Built for Kings",
+      title: "BUILT FOR",
+      highlight: "KINGS",
+      subtitle: "Walk like royalty, always",
     },
   ];
 
-  // Auto-slide
+  // Auto-slide every 4s
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % shoes.length);
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [shoes.length]);
+  }, [slides.length]);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden pt-12 pb-8">
-
-      {/* Background logo image (faded, centered) */}
+    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden pt-12 pb-16">
+      {/* Background Logo Image (faded) */}
       <div
         className="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-5 pointer-events-none"
-        style={{ backgroundImage: "url('/public/logo main 2.png')" }} // replace with your actual logo file in public/
+        style={{ backgroundImage: "url('/logo-main-2.png')" }} // put logo in /public
       ></div>
 
       <div className="relative z-10 container mx-auto px-3 sm:px-4 lg:px-6 min-h-screen flex flex-col justify-center items-center">
-
-        
-        {/* Top Heading - inline */}
-        <div className="flex items-center justify-center mb-4 md:mb-8 space-x-3">
+        {/* Top Heading (inline) */}
+        <div className="flex items-center justify-center mb-6 md:mb-10 space-x-3">
           <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-black">
             Wear LUONA...
           </h1>
@@ -66,43 +79,42 @@ const HeroSection = () => {
         </div>
 
         {/* Slideshow */}
-        <div className="relative w-full max-w-4xl mb-4 md:mb-8">
-          <div className="relative overflow-hidden  bg-white/30  border border-white/20">
+        <div className="relative w-full max-w-5xl mb-10">
+          <div className="relative overflow-hidden bg-white/30 border border-white/20 rounded-2xl shadow-xl">
             <div
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              {shoes.map((shoe) => (
+              {slides.map((slide) => (
                 <div
-                  key={shoe.id}
-                  className="w-full flex-shrink-0 px-8 py-12 md:px-16 md:py-20"
+                  key={slide.id}
+                  className="w-full flex-shrink-0 px-6 py-12 md:px-12 md:py-16"
                 >
                   <div className="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
-                    
-                    {/* Shoe Image */}
+                    {/* Slide Image */}
                     <div className="relative group">
                       <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
                       <img
-                        src={shoe.image}
-                        alt={shoe.alt}
+                        src={slide.image}
+                        alt={slide.alt}
                         className="relative w-80 h-60 md:w-96 md:h-72 object-contain drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
 
-                    {/* Shoe Text */}
+                    {/* Slide Text */}
                     <div className="text-center md:text-left">
                       <div className="mb-4">
                         <span className="text-sm md:text-base font-medium text-gray-600 tracking-widest uppercase">
-                          MORE
+                          {slide.title}
                         </span>
                       </div>
                       <div className="mb-6">
                         <span className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 tracking-tight">
-                          STYLE
+                          {slide.highlight}
                         </span>
                       </div>
                       <p className="text-lg md:text-xl text-gray-600 font-light">
-                        {shoe.style}
+                        {slide.subtitle}
                       </p>
                     </div>
                   </div>
