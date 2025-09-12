@@ -79,14 +79,15 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col justify-center items-center">
         
         {/* Top Heading */}
-        <div className="text-center mb-12 md:mb-16">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-            Wear LUONA...
-          </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-gray-700 font-light">
-            the emblem of Kings
-          </p>
+        <div className="flex items-center justify-center mb-12 md:mb-16 space-x-3">
+            <h1 className="text-3xl md:text-2xl lg:text-3xl font-bold text-black">
+                Wear LUONA...
+            </h1>
+            <p className="text-xl md:text-2xl lg:text-3xl font-light text-black">
+                the emblem of Kings
+            </p>
         </div>
+
 
         {/* Slideshow Container */}
         <div className="relative w-full max-w-4xl mb-12 md:mb-16">
