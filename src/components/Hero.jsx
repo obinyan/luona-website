@@ -60,7 +60,7 @@ const HeroSection = () => {
   }, [slides.length]);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden pt-18 pb-16">
+    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden pt-20 pb-16">
       {/* Background Logo Image (faded) */}
       <div
         className="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-5 pointer-events-none"
