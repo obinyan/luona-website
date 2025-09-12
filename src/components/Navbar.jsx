@@ -188,7 +188,7 @@ const Navbar = () => {
               {/* Left: Logo */}
               <div className="flex-1">
                 <img 
-                  src="/api/placeholder/100/35" 
+                  src="/logo.jpg" 
                   alt="Luona Logo" 
                   className="h-8 w-auto"
                 />

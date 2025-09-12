@@ -34,7 +34,7 @@ const HeroSection = () => {
     },
     {
       id: 4,
-      image: "/boots 6.jpg",
+      image: "/boots 14.png",
       alt: "Built to Last",
       title: "BUILT TO",
       highlight: "LAST",
