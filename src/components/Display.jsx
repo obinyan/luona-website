@@ -37,10 +37,10 @@ const ShoeStylesSection = () => {
   };
 
   return (
-    <section className="py-16 px-6 pb-20 bg-white">
+    <section className="py-16 px-6 pt-6 pb-24 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-3xl md:text-4xl font-normal text-center text-black-900 mb-12 tracking-wide">
+        <h2 className="text-3xl md:text-4xl font-normal text-center text-gray-900 mb-12 tracking-wide">
           EXPLORE THE LATEST STYLES
         </h2>
         
@@ -64,7 +64,7 @@ const ShoeStylesSection = () => {
               >
                 {product.title}
                 <svg 
-                  className="w-4 h-6 transform group-hover:translate-x-1 transition-transform duration-200" 
+                  className="w-4 h-10 transform group-hover:translate-x-1 transition-transform duration-200" 
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
