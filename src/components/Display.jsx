@@ -6,25 +6,25 @@ const ShoeStylesSection = () => {
   const products = [
     {
       id: 1,
-      image: "/api/placeholder/300/300",
+      image: "/loafers 2.jpg",
       title: "Leather Loafer",
       link: "/store/leather-loafer"
     },
     {
       id: 2,
-      image: "/api/placeholder/300/300",
+      image: "/loafers 6.jpg",
       title: "Penny Loafers",
       link: "/store/penny-loafers"
     },
     {
       id: 3,
-      image: "/api/placeholder/300/300",
+      image: "/sandals 9.jpg",
       title: "Leather Sandals",
       link: "/store/leather-sandals"
     },
     {
       id: 4,
-      image: "/api/placeholder/300/300",
+      image: "/boots 12.jpg",
       title: "Leather Boots",
       link: "/store/leather-boots"
     }
@@ -37,10 +37,10 @@ const ShoeStylesSection = () => {
   };
 
   return (
-    <section className="py-16 px-6 bg-white">
+    <section className="py-16 px-6 pb-16 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 tracking-wide">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-black-400 mb-12 tracking-wide">
           EXPLORE THE LATEST STYLES
         </h2>
         
@@ -60,7 +60,7 @@ const ShoeStylesSection = () => {
               {/* Product Button */}
               <button
                 onClick={() => handleProductClick(product.link)}
-                className="text-lg font-medium text-gray-900 hover:text-gray-600 transition-colors duration-200 flex items-center gap-2 group"
+                className="text-lg font-medium text-gray-900 hover:text-black-600 transition-colors duration-200 flex items-center gap-2 group"
               >
                 {product.title}
                 <svg 
