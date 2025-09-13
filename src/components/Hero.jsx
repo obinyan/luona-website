@@ -73,7 +73,7 @@ const HeroSection = () => {
           <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-black">
             Wear LUONA...
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl font-light text-black">
+          <p className="text-xl md:text-2xl lg:text-3xl font-bold text-black">
             the emblem of Kings
           </p>
         </div>
