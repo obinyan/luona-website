@@ -37,7 +37,7 @@ const ShoeStylesSection = () => {
   };
 
   return (
-    <section className="py-16 px-6 pt-6 pb-24 bg-white">
+    <section className="py-16 px-6 pt-16 pb-20 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl font-normal text-center text-gray-900 mb-12 tracking-wide">
@@ -49,7 +49,7 @@ const ShoeStylesSection = () => {
           {products.map((product) => (
             <div key={product.id} className="flex flex-col items-center group">
               {/* Product Image Container */}
-              <div className="w-full aspect-square bg-gray-100 rounded-lg overflow-hidden mb-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <div className="w-full h-80 bg-gray-100 rounded-lg overflow-hidden mb-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
                 <img
                   src={product.image}
                   alt={product.title}
@@ -64,7 +64,7 @@ const ShoeStylesSection = () => {
               >
                 {product.title}
                 <svg 
-                  className="w-4 h-10 transform group-hover:translate-x-1 transition-transform duration-200" 
+                  className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-200" 
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
