@@ -24,14 +24,14 @@ const HeroSection = () => {
       highlight: "COMFORT",
       
     },
-    {
+    /*{
       id: 3,
       image: "/mules 10.png",
       alt: "Affordable Luxury",
       title: "AFFORDABLE",
       highlight: "LUXURY",
       
-    },
+    },*/
     {
       id: 4,
       image: "/boots 14.png",
