@@ -4,6 +4,7 @@ import Display from "@/components/Display";
 import Gallery from "@/components/Gallery";
 import Statement from "@/components/Statement";
 import Shopnow from "@/components/Shopnow";
+import Shopnow2 from "@/components/Shopnow2";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Gallery />
       <Statement />
       <Shopnow />
+      <Shopnow2 />
     </>
   );
 }
