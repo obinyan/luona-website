@@ -13,7 +13,7 @@ const ShoeShowcase = () => {
               <img
                 src="/brogues 3.jpg"
                 alt="Brogues"
-                className="w-full h-40 object-cover rounded mb-4"
+                className="w-full h-80 object-cover rounded mb-4"
               />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3 tracking-wider">
@@ -31,7 +31,7 @@ const ShoeShowcase = () => {
               <img
                 src="/mules 6.jpg"
                 alt="Mules"
-                className="w-full h-40 object-cover rounded mb-4"
+                className="w-full h-80 object-cover rounded mb-4"
               />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3 tracking-wider">
@@ -49,7 +49,7 @@ const ShoeShowcase = () => {
               <img
                 src="/loafers 8.jpg"
                 alt="Loafers"
-                className="w-full h-40 object-cover rounded mb-4"
+                className="w-full h-80 object-cover rounded mb-4"
               />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3 tracking-wider">
