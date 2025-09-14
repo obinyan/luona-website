@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Display from "@/components/Display";
 import Gallery from "@/components/Gallery";
 import Statement from "@/components/Statement";
+import Shopnow from "@/components/Shopnow";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Display />
       <Gallery />
       <Statement />
+      <Shopnow />
     </>
   );
 }
