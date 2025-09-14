@@ -5,6 +5,7 @@ import Gallery from "@/components/Gallery";
 import Statement from "@/components/Statement";
 import Shopnow from "@/components/Shopnow";
 import Shopnow2 from "@/components/Shopnow2";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Statement />
       <Shopnow />
       <Shopnow2 />
+      <Footer />
     </>
   );
 }
