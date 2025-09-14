@@ -22,7 +22,7 @@ export default function FootwearSection() {
             <img 
               src="/poster 2.jpg" 
               alt="Tan suede loafers with gold buckle detail being worn"
-              className="w-full h-100 rounded-lg shadow-lg object-cover"
+              className="w-full h-120 rounded-lg shadow-lg object-cover"
             />
           </div>
         </div>
