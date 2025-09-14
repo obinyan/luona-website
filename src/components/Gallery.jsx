@@ -13,7 +13,7 @@ export default function FootwearSection() {
             <img 
               src="/loafers 10.jpg" 
               alt="Black loafers with colorful comic book print design"
-              className="w-full h-auto rounded-lg shadow-lg object-cover"
+              className="w-full h-80 rounded-lg shadow-lg object-cover"
             />
           </div>
           
@@ -22,7 +22,7 @@ export default function FootwearSection() {
             <img 
               src="/poster 2.jpg" 
               alt="Tan suede loafers with gold buckle detail being worn"
-              className="w-full h-auto rounded-lg shadow-lg object-cover"
+              className="w-full h-80 rounded-lg shadow-lg object-cover"
             />
           </div>
         </div>
