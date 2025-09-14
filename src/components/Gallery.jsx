@@ -13,7 +13,7 @@ export default function FootwearSection() {
             <img 
               src="/loafers 10.jpg" 
               alt="Black loafers with colorful comic book print design"
-              className="w-full h-130  shadow-lg object-cover"
+              className="w-full h-140  shadow-lg object-cover"
             />
           </div>
           
@@ -22,14 +22,14 @@ export default function FootwearSection() {
             <img 
               src="/poster 2.jpg" 
               alt="Tan suede loafers with gold buckle detail being worn"
-              className="w-full h-130  shadow-lg object-cover"
+              className="w-full h-140  shadow-lg object-cover"
             />
           </div>
         </div>
         
         {/* Heading */}
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-normal text-gray-900 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-normal text-gray-900 leading-tight">
             Wear footwear that speaks your value.
           </h2>
         </div>
