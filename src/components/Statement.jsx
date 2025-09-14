@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function VisionMissionSection() {
   return (
-    <section className="py-16 px-6 bg-gray-50 pt-20">
+    <section className="py-16 px-6 bg-gray-50 pt-24">
       <div className="max-w-6xl mx-auto">
         {/* Vision and Mission Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
