@@ -13,7 +13,7 @@ const BespokeSection = () => {
               <img
                 src="/poster 5.jpg"
                 alt="Craftsman"
-                className="w-full h-96 object-cover"
+                className="w-full h-100 object-cover"
               />
             </div>
           </div>
