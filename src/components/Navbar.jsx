@@ -77,7 +77,7 @@ const Navbar = () => {
               <div className="relative flex items-center" ref={contactDropdownRef}>
                 <button
                   onClick={() => setIsContactDropdownOpen(!isContactDropdownOpen)}
-                  className="flex items-center space-x-1 text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200"
+                  className="flex items-center space-x-1 text-gray-900 hover:text-gray-900 font-medium transition-colors duration-200"
                 >
                   <span>Contact Us</span>
                   <ChevronDown
