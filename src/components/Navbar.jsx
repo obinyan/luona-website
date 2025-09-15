@@ -70,25 +70,31 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
-          {/* Desktop Layout */}
+         {/* Desktop Layout */}
           {!isMobile && (
             <>
               {/* Left: Contact Us Dropdown */}
-              <div className="relative" ref={contactDropdownRef}>
+              <div className="relative flex items-center" ref={contactDropdownRef}>
                 <button
                   onClick={() => setIsContactDropdownOpen(!isContactDropdownOpen)}
                   className="flex items-center space-x-1 text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200"
                 >
                   <span>Contact Us</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isContactDropdownOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-200 ${
+                      isContactDropdownOpen ? "rotate-180" : ""
+                    }`}
+                  />
                 </button>
-                
+
                 {/* Contact Dropdown */}
-                <div className={`absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top ${
-                  isContactDropdownOpen 
-                    ? 'opacity-100 scale-y-100 translate-y-0' 
-                    : 'opacity-0 scale-y-95 -translate-y-2 pointer-events-none'
-                }`}>
+                <div
+                  className={`absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top ${
+                    isContactDropdownOpen
+                      ? "opacity-100 scale-y-100 translate-y-0"
+                      : "opacity-0 scale-y-95 -translate-y-2 pointer-events-none"
+                  }`}
+                >
                   <div className="py-2">
                     {contactMethods.map((method, index) => (
                       <button
@@ -108,10 +114,10 @@ const Navbar = () => {
 
               {/* Center: Logo */}
               <div className="flex-1 flex items-center justify-center">
-                <img 
-                  src="/logo.jpg" 
-                  alt="Luona Logo" 
-                  className="h-16 w-auto"
+                <img
+                  src="/logo.jpg"
+                  alt="Luona Logo"
+                  className="h-20 w-auto" // increased size from h-16 → h-20
                 />
               </div>
 
