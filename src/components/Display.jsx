@@ -49,7 +49,7 @@ const ShoeStylesSection = () => {
           {products.map((product) => (
             <div key={product.id} className="flex flex-col items-center group">
               {/* Product Image Container */}
-              <div className="w-full h-80 bg-gray-100 rounded-lg overflow-hidden mb-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+              <div className="w-full h-96 sm:h-80  bg-gray-100 overflow-hidden mb-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
                 <img
                   src={product.image}
                   alt={product.title}

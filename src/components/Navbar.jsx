@@ -107,7 +107,7 @@ const Navbar = () => {
               </div>
 
               {/* Center: Logo */}
-              <div className="flex-1 flex justify-center">
+              <div className="flex-1 flex items-center justify-center">
                 <img 
                   src="/logo.jpg" 
                   alt="Luona Logo" 
