@@ -69,14 +69,15 @@ const HeroSection = () => {
 
       <div className="relative z-10 container mx-auto px-3 sm:px-4 lg:px-6 min-h-screen flex flex-col justify-center items-center">
         {/* Top Heading (inline) */}
-        <div className="flex items-center justify-center pt-12 md:mb-10 space-x-3">
-          <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-black">
-            Wear LUONA...
-          </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl font-bold text-black">
-            the emblem of Kings
-          </p>
-        </div>
+        <div className="flex items-center justify-center pt-12 md:mb-10 space-x-3 flex-nowrap">
+        <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-black whitespace-nowrap">
+          Wear LUONA...
+        </h1>
+        <p className="text-xl md:text-2xl lg:text-3xl font-bold text-black whitespace-nowrap">
+          the emblem of Kings
+        </p>
+      </div>
+
 
         {/* Slideshow */}
         <div className="relative w-full max-w-5xl mb-10">
