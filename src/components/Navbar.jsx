@@ -117,7 +117,7 @@ const Navbar = () => {
                 <img
                   src="/logo.jpg"
                   alt="Luona Logo"
-                  className="h-20 w-auto" // increased size from h-16 → h-20
+                  className="h-16 w-auto" // increased size from h-16 → h-20
                 />
               </div>
 
@@ -131,7 +131,7 @@ const Navbar = () => {
                   >
                     <Search className="w-5 h-5" />
                   </button>
-                  
+
                   {/* Search Dropdown */}
                   <div className={`absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top-right ${
                     isSearchOpen 
@@ -192,7 +192,7 @@ const Navbar = () => {
           {isMobile && (
             <>
               {/* Left: Logo */}
-              <div className="flex-1">
+              <div className="flex-1 justify-center flex items-center">
                 <img 
                   src="/logo.jpg" 
                   alt="Luona Logo" 
