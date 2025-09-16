@@ -15,28 +15,28 @@ const ShoesForKings = () => {
       id: 0,
       name: "Men's Brogues",
       price: 50000,
-      image: "/api/placeholder/200/200",
+      image: "/brogues 4.jpg",
       colors: ['white', 'black']
     },
     {
       id: 1,
       name: "Men's Brogues",
       price: 50000,
-      image: "/api/placeholder/200/200",
+      image: "/brogues 2.jpg",
       colors: ['brown', 'beige']
     },
     {
       id: 2,
       name: "Men's Brogues",
       price: 50000,
-      image: "/api/placeholder/200/200",
+      image: "/brogues 11.jpg",
       colors: ['navy', 'gray']
     },
     {
       id: 3,
       name: "Men's Brogues",
       price: 50000,
-      image: "/api/placeholder/200/200",
+      image: "/brogues 6.jpg",
       colors: ['brown', 'tan']
     }
   ];
@@ -61,7 +61,7 @@ const ShoesForKings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
+    <div className="min-h-screen bg-gray-50 py-8 px-4 pt-10">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-2xl font-bold text-gray-900 mb-12 tracking-wide">
           SHOES FOR KINGS
@@ -71,8 +71,8 @@ const ShoesForKings = () => {
           {products.map((product) => (
             <div key={product.id} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
               {/* Product Image */}
-              <div className="aspect-square bg-gray-100 flex items-center justify-center p-6">
-                <div className="w-full h-full bg-gray-200 rounded flex items-center justify-center">
+              <div className="aspect-square bg-gray-100 flex items-center justify-center p-2">
+                <div className="w-full h-full  rounded flex items-center justify-center">
                   <span className="text-gray-500 text-sm">Shoe Image</span>
                 </div>
               </div>
@@ -110,7 +110,7 @@ const ShoesForKings = () => {
                 {/* Size and Quantity Selection */}
                 <div className="flex gap-3">
                   <div className="flex-1">
-                    <label className="block text-xs text-gray-600 mb-1">Size</label>
+                    <label className="block text-xs text-gray-900 mb-1">Size</label>
                     <select
                       value={selectedProducts[product.id].size}
                       onChange={(e) => handleSizeChange(product.id, e.target.value)}
@@ -128,7 +128,7 @@ const ShoesForKings = () => {
                   </div>
                   
                   <div className="flex-1">
-                    <label className="block text-xs text-gray-600 mb-1">Quantity</label>
+                    <label className="block text-xs text-gray-900 mb-1">Quantity</label>
                     <select
                       value={selectedProducts[product.id].quantity}
                       onChange={(e) => handleQuantityChange(product.id, parseInt(e.target.value))}
@@ -147,7 +147,7 @@ const ShoesForKings = () => {
                   className="w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded text-xs font-medium hover:bg-gray-50 focus:outline-none focus:ring-1 focus:ring-gray-400 transition-colors flex items-center justify-center gap-1"
                 >
                   Add to cart
-                  <span className="text-gray-400">→</span>
+                  <span className="text-gray-900">→</span>
                 </button>
               </div>
             </div>
