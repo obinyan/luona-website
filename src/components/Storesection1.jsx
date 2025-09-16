@@ -63,20 +63,20 @@ const ShoesForKings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4 pt-24">
+    <div className="min-h-screen bg-white py-8 px-4 pt-24 pb-12">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-2xl font-bold text-gray-900 mb-12 tracking-wide">
           SHOES FOR KINGS
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {products.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
+              className="bg-white  shadow-sm overflow-hidden"
             >
               {/* Product Image */}
-              <div className="bg-gray-100 flex items-center justify-center h-64">
+              <div className="flex items-center justify-center h-64">
                 <img
                   src={product.image}
                   alt={product.name}
