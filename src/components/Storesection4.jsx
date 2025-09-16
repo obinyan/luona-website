@@ -15,28 +15,28 @@ const ShoesForKings = () => {
       id: 0,
       name: "Men's Brogues",
       price: 50000,
-      image: "/brogues 4.jpg",
+      image: "/mules 11.jpg",
       colors: ["white", "black"],
     },
     {
       id: 1,
       name: "Men's Brogues",
       price: 50000,
-      image: "/brogues 2.jpg",
+      image: "/mules 4.jpg",
       colors: ["brown", "beige"],
     },
     {
       id: 2,
       name: "Men's Brogues",
       price: 50000,
-      image: "/brogues 11.jpg",
+      image: "/mules 9.jpg",
       colors: ["navy", "gray"],
     },
     {
       id: 3,
       name: "Men's Brogues",
       price: 50000,
-      image: "/brogues 6.jpg",
+      image: "/mules 8.jpg",
       colors: ["brown", "tan"],
     },
   ];
@@ -63,11 +63,8 @@ const ShoesForKings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white py-8 px-4 pt-24 pb-20">
+    <div className="min-h-screen bg-white py-8 px-4 pt-24 pb-12">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-2xl font-bold text-gray-900 mb-12 tracking-wide">
-          SHOES FOR KINGS
-        </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {products.map((product) => (
@@ -85,7 +82,7 @@ const ShoesForKings = () => {
               </div>
 
               {/* Product Details */}
-              <div className="p-2 space-y-4">
+              <div className="p-4 space-y-4">
                 <div>
                   <h3 className="text-sm font-medium text-gray-900 mb-1">
                     {product.name}
