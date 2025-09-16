@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";   // ✅ import Link
 import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
@@ -14,7 +15,6 @@ const HeroSection = () => {
       alt: "More Style",
       title: "MORE",
       highlight: "STYLE",
-      
     },
     {
       id: 2,
@@ -22,23 +22,13 @@ const HeroSection = () => {
       alt: "More Comfort",
       title: "MORE",
       highlight: "COMFORT",
-      
     },
-    /*{
-      id: 3,
-      image: "/mules 10.png",
-      alt: "Affordable Luxury",
-      title: "AFFORDABLE",
-      highlight: "LUXURY",
-      
-    },*/
     {
       id: 4,
       image: "/boots 14.png",
       alt: "Built to Last",
       title: "BUILT TO",
       highlight: "LAST",
-      
     },
     {
       id: 5,
@@ -46,7 +36,6 @@ const HeroSection = () => {
       alt: "Built for Kings",
       title: "BUILT FOR",
       highlight: "KINGS",
-      
     },
   ];
 
@@ -70,14 +59,13 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-3 sm:px-4 lg:px-6 min-h-screen flex flex-col justify-center items-center">
         {/* Top Heading (inline) */}
         <div className="flex items-center justify-center pt-12 md:mb-10 space-x-3 flex-nowrap">
-        <h1 className="text-lg sm:text-2x1 md:text-3xl lg:text-4xl font-bold text-black whitespace-nowrap">
-          Wear LUONA...
-        </h1>
-        <p className="text-lg sm:text-2x1 md:text-2xl lg:text-3xl font-bold text-black whitespace-nowrap">
-          the emblem of Kings
-        </p>
-      </div>
-
+          <h1 className="text-lg sm:text-2x1 md:text-3xl lg:text-4xl font-bold text-black whitespace-nowrap">
+            Wear LUONA...
+          </h1>
+          <p className="text-lg sm:text-2x1 md:text-2xl lg:text-3xl font-bold text-black whitespace-nowrap">
+            the emblem of Kings
+          </p>
+        </div>
 
         {/* Slideshow */}
         <div className="relative w-full max-w-5xl mb-10">
@@ -127,10 +115,12 @@ const HeroSection = () => {
 
         {/* CTA Button */}
         <div className="text-center z-20 relative">
-          <button className="group inline-flex items-center px-8 py-4 md:px-10 md:py-5 bg-transparent border-2 border-black text-black font-semibold text-lg md:text-xl rounded-full hover:bg-black hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
-            <span className="mr-3">Shop Now</span>
-            <ArrowRight className="w-5 h-5 md:w-6 md:h-6 transform group-hover:translate-x-1 transition-transform duration-200" />
-          </button>
+          <Link href="/store">
+            <button className="group inline-flex items-center px-8 py-4 md:px-10 md:py-5 bg-transparent border-2 border-black text-black font-semibold text-lg md:text-xl rounded-full hover:bg-black hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+              <span className="mr-3">Shop Now</span>
+              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 transform group-hover:translate-x-1 transition-transform duration-200" />
+            </button>
+          </Link>
         </div>
       </div>
     </section>
@@ -138,4 +128,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
- 
