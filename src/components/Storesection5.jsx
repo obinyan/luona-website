@@ -63,7 +63,7 @@ const ShoesForKings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white py-8 px-4 pt-24 pb-12">
+    <div className="min-h-screen bg-white py-8 px-4  pb-12">
       <div className="max-w-7xl mx-auto">
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -92,32 +92,7 @@ const ShoesForKings = () => {
                   </p>
                 </div>
 
-                {/* Color Options */}
-                <div className="flex gap-2">
-                  {product.colors.map((color, index) => (
-                    <div
-                      key={index}
-                      className={`w-6 h-6 rounded border border-gray-400 cursor-pointer ${
-                        color === "white"
-                          ? "bg-white"
-                          : color === "black"
-                          ? "bg-black"
-                          : color === "brown"
-                          ? "bg-amber-800"
-                          : color === "beige"
-                          ? "bg-amber-100"
-                          : color === "navy"
-                          ? "bg-blue-900"
-                          : color === "gray"
-                          ? "bg-gray-400"
-                          : color === "tan"
-                          ? "bg-amber-600"
-                          : "bg-gray-300"
-                      }`}
-                      title={color}
-                    />
-                  ))}
-                </div>
+              
 
                 {/* Size and Quantity Selection */}
                 <div className="flex gap-3">
