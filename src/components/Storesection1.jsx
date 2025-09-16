@@ -15,28 +15,28 @@ const ShoesForKings = () => {
       id: 0,
       name: "Men's Brogues",
       price: 50000,
-      image: "/brogues-4.jpg",
+      image: "/brogues 4.jpg",
       colors: ["white", "black"],
     },
     {
       id: 1,
       name: "Men's Brogues",
       price: 50000,
-      image: "/brogues-2.jpg",
+      image: "/brogues 2.jpg",
       colors: ["brown", "beige"],
     },
     {
       id: 2,
       name: "Men's Brogues",
       price: 50000,
-      image: "/brogues-11.jpg",
+      image: "/brogues 11.jpg",
       colors: ["navy", "gray"],
     },
     {
       id: 3,
       name: "Men's Brogues",
       price: 50000,
-      image: "/brogues-6.jpg",
+      image: "/brogues 6.jpg",
       colors: ["brown", "tan"],
     },
   ];
@@ -63,8 +63,8 @@ const ShoesForKings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4 pt-10">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-gray-50 py-8 px-4 pt-24">
+      <div className="max-w-7xl mx-auto">
         <h1 className="text-2xl font-bold text-gray-900 mb-12 tracking-wide">
           SHOES FOR KINGS
         </h1>
@@ -76,7 +76,7 @@ const ShoesForKings = () => {
               className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
             >
               {/* Product Image */}
-              <div className="bg-gray-100 flex items-center justify-center h-56">
+              <div className="bg-gray-100 flex items-center justify-center h-64">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -133,7 +133,7 @@ const ShoesForKings = () => {
                       onChange={(e) =>
                         handleSizeChange(product.id, e.target.value)
                       }
-                      className="w-full px-2 py-1.5 text-xs border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-gray-600"
+                      className="w-full px-2 py-1.5 text-xs text-gray-900 border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-gray-600"
                     >
                       <option value="">-</option>
                       {[39, 40, 41, 42, 43, 44, 45].map((num) => (
@@ -153,7 +153,7 @@ const ShoesForKings = () => {
                       onChange={(e) =>
                         handleQuantityChange(product.id, parseInt(e.target.value))
                       }
-                      className="w-full px-2 py-1.5 text-xs border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-gray-600"
+                      className="w-full px-2 py-1.5 text-xs text-gray-900 border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-gray-600"
                     >
                       {[1, 2, 3, 4, 5].map((num) => (
                         <option key={num} value={num}>
@@ -167,7 +167,7 @@ const ShoesForKings = () => {
                 {/* Add to Cart Button */}
                 <button
                   onClick={() => handleAddToCart(product.id)}
-                  className="w-full bg-white border border-gray-500 text-gray-900 py-2 px-4 rounded text-xs font-medium hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-600 transition-colors flex items-center justify-center gap-1"
+                  className="w-full bg-white border border-gray-500 text-gray-900 py-2 px-4 rounded text-xs font-medium hover:bg-black hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-600 transition-colors flex items-center justify-center gap-1"
                 >
                   Add to cart
                   <span className="text-gray-900">→</span>
