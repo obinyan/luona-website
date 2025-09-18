@@ -13,28 +13,28 @@ const ShoesForKings = () => {
   const products = [
     {
       id: 0,
-      name: "Men's Brogues",
+      name: "Men's Boots",
       price: 50000,
       image: "/boots 17.jpg",
       colors: ["white", "black"],
     },
     {
       id: 1,
-      name: "Men's Brogues",
+      name: "Men's Boots",
       price: 50000,
       image: "/boots 8.jpg",
       colors: ["brown", "beige"],
     },
     {
       id: 2,
-      name: "Men's Brogues",
+      name: "Men's Boots",
       price: 50000,
       image: "/boots 6.jpg",
       colors: ["navy", "gray"],
     },
     {
       id: 3,
-      name: "Men's Brogues",
+      name: "Men's Boots",
       price: 50000,
       image: "/boots 10.jpg",
       colors: ["brown", "tan"],
