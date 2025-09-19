@@ -11,7 +11,7 @@ import {
   ChevronDown,
   X,
 } from "lucide-react";
-import { useCart } from "../app/CartContext";
+import { useCart } from "@/app/CartContext";
 
 const Navbar = () => {
   const { cart, removeFromCart } = useCart();
