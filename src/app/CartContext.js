@@ -1,3 +1,4 @@
+// CartContext.js
 "use client";
 import React, { createContext, useContext, useState } from "react";
 
@@ -6,7 +7,7 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  // ✅ Add to cart (handles duplicates)
+  // Add to cart (merge duplicates by product.id + size)
   const addToCart = (product, size, quantity) => {
     setCart((prev) => {
       const existingIndex = prev.findIndex(
@@ -14,37 +15,44 @@ export const CartProvider = ({ children }) => {
       );
 
       if (existingIndex !== -1) {
-        // update quantity if product already exists
-        const updatedCart = [...prev];
-        updatedCart[existingIndex].quantity += quantity;
-        return updatedCart;
+        const updated = [...prev];
+        updated[existingIndex] = {
+          ...updated[existingIndex],
+          quantity: updated[existingIndex].quantity + quantity,
+        };
+        return updated;
       }
 
-      // add new product
       return [...prev, { ...product, size, quantity }];
     });
   };
 
-  // ✅ Remove item by product id + size
-  const removeFromCart = (id, size) => {
-    setCart((prev) =>
-      prev.filter((item) => !(item.id === id && item.size === size))
-    );
+  // Remove by index (matches your current usage removeFromCart(index))
+  const removeFromCart = (index) => {
+    setCart((prev) => prev.filter((_, i) => i !== index));
   };
 
-  // ✅ Calculate total price
-  const getCartTotal = () => {
-    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  // Optional helper: remove by id + size if you prefer that
+  const removeByIdAndSize = (id, size) => {
+    setCart((prev) => prev.filter((it) => !(it.id === id && it.size === size)));
   };
 
-  // ✅ Calculate total items
-  const getCartCount = () => {
-    return cart.reduce((count, item) => count + item.quantity, 0);
-  };
+  const getCartTotal = () =>
+    cart.reduce((total, item) => total + item.price * item.quantity, 0);
+
+  const getCartCount = () =>
+    cart.reduce((count, item) => count + item.quantity, 0);
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, getCartTotal, getCartCount }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        removeByIdAndSize,
+        getCartTotal,
+        getCartCount,
+      }}
     >
       {children}
     </CartContext.Provider>

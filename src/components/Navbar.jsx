@@ -14,7 +14,7 @@ import {
 import { useCart } from "@/app/CartContext";
 
 const Navbar = () => {
-  const { cart, removeFromCart } = useCart();
+  const { cart, removeFromCart, getCartCount, getCartTotal } = useCart();
 
   // State variables
   const [isMobile, setIsMobile] = useState(false);
@@ -27,13 +27,13 @@ const Navbar = () => {
   const contactDropdownRef = useRef(null);
   const menuDropdownRef = useRef(null);
   const searchRef = useRef(null);
+  const cartRef = useRef(null); // ✅ new ref for cart
 
   // Handle screen resize
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
     return () => window.removeEventListener("resize", checkScreenSize);
@@ -56,6 +56,9 @@ const Navbar = () => {
       }
       if (searchRef.current && !searchRef.current.contains(event.target)) {
         setIsSearchOpen(false);
+      }
+      if (cartRef.current && !cartRef.current.contains(event.target)) {
+        setIsCartOpen(false); // ✅ close cart
       }
     };
 
@@ -178,14 +181,16 @@ const Navbar = () => {
                 </div>
 
                 {/* Cart with Dropdown */}
-                <div className="relative">
+                <div className="relative" ref={cartRef}>
                   <button
-                    onClick={() => setIsCartOpen(!isCartOpen)}
+                    onClick={() => setIsCartOpen((s) => !s)}
                     className="p-2 text-gray-700 hover:text-gray-900 transition-colors duration-200 relative"
+                    aria-expanded={isCartOpen}
+                    aria-label="Open cart"
                   >
                     <ShoppingBag className="w-5 h-5" />
                     <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                      {cart.length}
+                      {getCartCount()}
                     </span>
                   </button>
 
@@ -204,7 +209,7 @@ const Navbar = () => {
                           <ul className="divide-y divide-gray-200 max-h-64 overflow-y-auto">
                             {cart.map((item, index) => (
                               <li
-                                key={index}
+                                key={item.id ? `${item.id}-${item.size}` : index}
                                 className="py-2 flex items-center justify-between"
                               >
                                 <div>
@@ -233,7 +238,7 @@ const Navbar = () => {
                         {cart.length > 0 && (
                           <div className="mt-4">
                             <button className="w-full bg-black text-white py-2 rounded text-sm font-medium hover:bg-gray-800">
-                              Checkout
+                              Checkout — ₦{getCartTotal().toLocaleString()}
                             </button>
                           </div>
                         )}
