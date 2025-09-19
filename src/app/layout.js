@@ -1,6 +1,6 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { CartProvider } from "@/CartContext";  // ✅ same folder
+import { CartProvider } from "@/app/CartContext";  // ✅ same folder
 import Navbar from "@/components/Navbar";     // ✅ go up one level, then into components
 
 const montserrat = Montserrat({
