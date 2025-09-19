@@ -1,7 +1,7 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { CartProvider } from "./CartContext";
-import Navbar from "./components/Navbar"; // make sure this path is correct
+import { CartProvider } from "./CartContext";  // ✅ same folder
+import Navbar from "../components/Navbar";     // ✅ go up one level, then into components
 
 const montserrat = Montserrat({
   subsets: ["latin"],

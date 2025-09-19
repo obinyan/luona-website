@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { useCart } from "./CartContext";
+import { useCart } from "../app/CartContext";
 
 const ShoesForKings = () => {
   const [selectedProducts, setSelectedProducts] = useState({
@@ -15,28 +15,28 @@ const ShoesForKings = () => {
     {
       id: 0,
       name: "Men's Brogues",
-      price: 50000,
+      price: 70000,
       image: "/brogues 4.jpg",
       colors: ["white", "black"],
     },
     {
       id: 1,
       name: "Men's Brogues",
-      price: 50000,
+      price: 70000,
       image: "/brogues 2.jpg",
       colors: ["brown", "beige"],
     },
     {
       id: 2,
       name: "Men's Brogues",
-      price: 50000,
+      price: 70000,
       image: "/brogues 11.jpg",
       colors: ["navy", "gray"],
     },
     {
       id: 3,
       name: "Men's Brogues",
-      price: 50000,
+      price: 70000,
       image: "/brogues 6.jpg",
       colors: ["brown", "tan"],
     },

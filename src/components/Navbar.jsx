@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Search, ShoppingBag, Menu, Phone, Mail, MessageCircle, ChevronDown, X } from "lucide-react";
-import { useCart } from "./CartContext";
+import { useCart } from "../app/CartContext";
 
 
 const Navbar = () => {
