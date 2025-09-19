@@ -121,7 +121,7 @@ const Navbar = () => {
                       : "opacity-0 scale-y-95 -translate-y-2 pointer-events-none"
                   }`}
                 >
-                  <div className="py-4">
+                  <div className="py-4 pt-24">
                     {contactMethods.map((method, index) => (
                       <button
                         key={index}
