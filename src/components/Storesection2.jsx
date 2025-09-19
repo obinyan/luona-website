@@ -150,8 +150,8 @@ const ShoesForKings = () => {
   onClick={() => handleAddToCart(product.id)}
   className={`w-full py-2 px-4 rounded text-xs font-medium transition-colors flex items-center justify-center gap-1
     ${!selectedProducts[product.id].size
-      ? " text-black cursor-not-allowed"
-      : "bg-white border border-black text-gray-900 hover:bg-black hover:text-white"
+      ? "bg-gray-200 text-gray-900 cursor-not-allowed"
+      : "bg-white border border-gray-500 text-gray-900 hover:bg-black hover:text-white"
     }`}
 >
   Add to cart →

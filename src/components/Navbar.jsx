@@ -233,17 +233,17 @@ const Navbar = () => {
                                   <p className="text-sm font-medium">
                                     {item.name}
                                   </p>
-                                  <p className="text-xs text-black">
+                                  <p className="text-xs text-gray-900">
                                     Size: {item.size} | Qty: {item.quantity}
                                   </p>
-                                  <p className="text-xs text-black">
+                                  <p className="text-xs text-gray-900">
                                     ₦
                                     {(item.price * item.quantity).toLocaleString()}
                                   </p>
                                 </div>
                                 <button
                                   onClick={() => removeFromCart(index)}
-                                  className="text-red-00 text-xs hover:underline"
+                                  className="text-red-900 text-xs hover:underline"
                                 >
                                   Remove
                                 </button>
