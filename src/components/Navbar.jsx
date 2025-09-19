@@ -115,31 +115,48 @@ const Navbar = () => {
 
                 {/* Contact Dropdown */}
                 <div
-                  className={`absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top ${
-                    isContactDropdownOpen
-                      ? "opacity-100 scale-y-100 translate-y-0"
-                      : "opacity-0 scale-y-95 -translate-y-2 pointer-events-none"
-                  }`}
-                >
-                  <div className="py-4 pt-28">
-                    {contactMethods.map((method, index) => (
-                      <button
-                        key={index}
-                        className="w-full px-4 py-3 text-left hover:bg-gray-50 flex items-center space-x-3 transition-colors duration-150"
-                      >
-                        <method.icon className="w-5 h-5 text-gray-600" />
-                        <div>
-                          <div className="font-medium text-gray-900">
-                            {method.label}
-                          </div>
-                          <div className="text-sm text-gray-600">
-                            {method.value}
-                          </div>
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
+  className={`absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top ${
+    isContactDropdownOpen
+      ? "opacity-100 scale-y-100 translate-y-0"
+      : "opacity-0 scale-y-95 -translate-y-2 pointer-events-none"
+  }`}
+>
+  <div className="py-4">
+    {contactMethods.map((method, index) => {
+      let href = "#";
+
+      if (method.label === "Phone") {
+        href = `tel:${method.value.replace(/\s+/g, "")}`;
+      } else if (method.label === "Email") {
+        href = `mailto:${method.value}`;
+      } else if (method.label === "WhatsApp") {
+        href = `https://wa.me/2348143164423`;
+      }
+
+      return (
+        <a
+          key={index}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full px-4 py-3 text-left hover:bg-gray-50 flex items-center space-x-3 transition-colors duration-150"
+        >
+          <method.icon className="w-5 h-5 text-gray-600" />
+          <div>
+            <div className="font-medium text-gray-900">
+              {method.label}
+            </div>
+            <div className="text-sm text-gray-600">
+              {method.value}
+            </div>
+          </div>
+        </a>
+      );
+    })}
+  </div>
+</div>
+{/* ✅ no extra newlines, clean closing tags here */}
+
               </div>
 
               {/* Center: Logo */}
@@ -226,7 +243,7 @@ const Navbar = () => {
                                 </div>
                                 <button
                                   onClick={() => removeFromCart(index)}
-                                  className="text-red-700 text-xs hover:underline"
+                                  className="text-red-00 text-xs hover:underline"
                                 >
                                   Remove
                                 </button>
