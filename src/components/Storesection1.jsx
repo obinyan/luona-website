@@ -21,7 +21,7 @@ const ShoesForKings = () => {
     },
     {
       id: 1,
-      name: "Black leather Oxford shoes",
+      name: "Black leather Oxford brogues",
       price: 70000,
       image: "/brogues 2.jpg",
       colors: ["brown", "beige"],

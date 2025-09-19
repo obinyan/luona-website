@@ -13,8 +13,8 @@ const ShoesForKings = () => {
   const products = [
     {
       id: 0,
-      name: "Men's Sandals",
-      price: 40000,
+      name: "Birken Sandals",
+      price: 55000,
       image: "/sandals 15.png",
       colors: ["white", "black"],
     },
@@ -27,14 +27,14 @@ const ShoesForKings = () => {
     },
     {
       id: 2,
-      name: "Men's Sandals",
+      name: "Leather cross-strap Sandals",
       price: 40000,
       image: "/sandals 17.png",
       colors: ["navy", "gray"],
     },
     {
       id: 3,
-      name: "Men's Sandals",
+      name: "Men's Leather Slide Sandals",
       price: 40000,
       image: "/sandals 21.png",
       colors: ["brown", "tan"],

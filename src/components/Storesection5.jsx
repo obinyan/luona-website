@@ -13,28 +13,28 @@ const ShoesForKings = () => {
   const products = [
     {
       id: 0,
-      name: "Men's Boots",
+      name: "Black leather Chelsea boot",
       price: 85000,
       image: "/boots 17.jpg",
       colors: ["white", "black"],
     },
     {
       id: 1,
-      name: "Men's Boots",
+      name: "Brown leather Chelsea boot",
       price: 85000,
       image: "/boots 8.jpg",
       colors: ["brown", "beige"],
     },
     {
       id: 2,
-      name: "Men's Boots",
+      name: "Longton leather Chelsea boot",
       price: 85000,
       image: "/boots 6.jpg",
       colors: ["navy", "gray"],
     },
     {
       id: 3,
-      name: "Men's Boots",
+      name: "Brown leather wingtip Chelsea boot",
       price: 85000,
       image: "/boots 10.jpg",
       colors: ["brown", "tan"],

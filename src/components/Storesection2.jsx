@@ -13,28 +13,28 @@ const ShoesForKings = () => {
   const products = [
     {
       id: 0,
-      name: "Men's Loafers",
+      name: "Grained Brown and Cream loafers",
       price: 70000,
       image: "/loafers 7.jpg",
       colors: ["white", "black"],
     },
     {
       id: 1,
-      name: "Men's Loafers",
+      name: "Two-tone Black and White penny loafers",
       price: 70000,
       image: "/loafers 1.jpg",
       colors: ["brown", "beige"],
     },
     {
       id: 2,
-      name: "Men's Loafers",
+      name: "Black suede loafers",
       price: 70000,
       image: "/loafers 11.jpg",
       colors: ["navy", "gray"],
     },
     {
       id: 3,
-      name: "Men's Loafers",
+      name: "Penny loafers",
       price: 70000,
       image: "/loafers 3.jpg",
       colors: ["brown", "tan"],
