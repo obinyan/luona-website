@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useCart } from "@/app/CartContext";
 
 const ShoesForKings = () => {
   const [selectedProducts, setSelectedProducts] = useState({
@@ -55,12 +56,19 @@ const ShoesForKings = () => {
     }));
   };
 
-  const handleAddToCart = (productId) => {
-    const product = selectedProducts[productId];
-    console.log(
-      `Added to cart: Product ${productId}, Size: ${product.size}, Quantity: ${product.quantity}`
-    );
-  };
+  const { addToCart } = useCart();
+  
+    const handleAddToCart = (productId) => {
+      const product = products.find((p) => p.id === productId);
+      const selection = selectedProducts[productId];
+  
+      if (!selection.size) {
+        alert("Please select a size before adding to cart");
+        return;
+      }
+  
+      addToCart(product, selection.size, selection.quantity);
+    };
 
   return (
     <div className="min-h-screen bg-white py-8 px-4 pb-12">
@@ -138,12 +146,16 @@ const ShoesForKings = () => {
 
                 {/* Add to Cart Button */}
                 <button
-                  onClick={() => handleAddToCart(product.id)}
-                  className="w-full bg-white border border-gray-500 text-gray-900 py-2 px-4 rounded text-xs font-medium hover:bg-black hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-600 transition-colors flex items-center justify-center gap-1"
-                >
-                  Add to cart
-                  <span className="text-gray-900">→</span>
-                </button>
+  disabled={!selectedProducts[product.id].size}
+  onClick={() => handleAddToCart(product.id)}
+  className={`w-full py-2 px-4 rounded text-xs font-medium transition-colors flex items-center justify-center gap-1
+    ${!selectedProducts[product.id].size
+      ? " text-black cursor-not-allowed"
+      : "bg-white border border-black text-gray-900 hover:bg-black hover:text-white"
+    }`}
+>
+  Add to cart →
+</button>
               </div>
             </div>
           ))}

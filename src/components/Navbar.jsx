@@ -82,8 +82,8 @@ const Navbar = () => {
   ];
 
   const contactMethods = [
-    { icon: Phone, label: "Phone", value: "+234 123 456 7890" },
-    { icon: Mail, label: "Email", value: "contact@luona.com" },
+    { icon: Phone, label: "Phone", value: "+234 814 316 4423" },
+    { icon: Mail, label: "Email", value: "okojiebenjamin@gmail.com" },
     { icon: MessageCircle, label: "WhatsApp", value: "Chat with us" },
   ];
 
@@ -121,7 +121,7 @@ const Navbar = () => {
                       : "opacity-0 scale-y-95 -translate-y-2 pointer-events-none"
                   }`}
                 >
-                  <div className="py-4 pt-24">
+                  <div className="py-4 pt-28">
                     {contactMethods.map((method, index) => (
                       <button
                         key={index}
@@ -184,7 +184,7 @@ const Navbar = () => {
                 <div className="relative" ref={cartRef}>
                   <button
                     onClick={() => setIsCartOpen((s) => !s)}
-                    className="p-2 text-gray-700 hover:text-gray-900 transition-colors duration-200 relative"
+                    className="p-2 text-black hover:text-gray-900 transition-colors duration-200 relative"
                     aria-expanded={isCartOpen}
                     aria-label="Open cart"
                   >
@@ -197,12 +197,12 @@ const Navbar = () => {
                   {isCartOpen && (
                     <div className="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg border z-50">
                       <div className="p-4">
-                        <h3 className="text-sm font-semibold text-gray-900 mb-2">
+                        <h3 className="text-sm font-semibold text-black mb-2">
                           Shopping Cart
                         </h3>
 
                         {cart.length === 0 ? (
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-black">
                             Your cart is empty
                           </p>
                         ) : (
@@ -216,17 +216,17 @@ const Navbar = () => {
                                   <p className="text-sm font-medium">
                                     {item.name}
                                   </p>
-                                  <p className="text-xs text-gray-500">
+                                  <p className="text-xs text-black">
                                     Size: {item.size} | Qty: {item.quantity}
                                   </p>
-                                  <p className="text-xs text-gray-700">
+                                  <p className="text-xs text-black">
                                     ₦
                                     {(item.price * item.quantity).toLocaleString()}
                                   </p>
                                 </div>
                                 <button
                                   onClick={() => removeFromCart(index)}
-                                  className="text-red-500 text-xs hover:underline"
+                                  className="text-red-700 text-xs hover:underline"
                                 >
                                   Remove
                                 </button>
