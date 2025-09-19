@@ -14,7 +14,7 @@ const ShoesForKings = () => {
   const products = [
     {
       id: 0,
-      name: "Men's Brogues",
+      name: "Black and white leather Oxford wingtip brogues",
       price: 70000,
       image: "/brogues 4.jpg",
       colors: ["white", "black"],
@@ -149,12 +149,17 @@ const ShoesForKings = () => {
 
                 {/* Add to Cart Button */}
                 <button
-                  onClick={() => handleAddToCart(product.id)}
-                  className="w-full bg-white border border-gray-500 text-gray-900 py-2 px-4 rounded text-xs font-medium hover:bg-black hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-600 transition-colors flex items-center justify-center gap-1"
-                >
-                  Add to cart
-                  <span className="text-gray-900">→</span>
-                </button>
+  disabled={!selectedProducts[product.id].size}
+  onClick={() => handleAddToCart(product.id)}
+  className={`w-full py-2 px-4 rounded text-xs font-medium transition-colors flex items-center justify-center gap-1
+    ${!selectedProducts[product.id].size
+      ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+      : "bg-white border border-gray-500 text-gray-900 hover:bg-black hover:text-white"
+    }`}
+>
+  Add to cart →
+</button>
+
               </div>
             </div>
           ))}

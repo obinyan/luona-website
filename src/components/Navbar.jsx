@@ -1,33 +1,57 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Search, ShoppingBag, Menu, Phone, Mail, MessageCircle, ChevronDown, X } from "lucide-react";
+import {
+  Search,
+  ShoppingBag,
+  Menu,
+  Phone,
+  Mail,
+  MessageCircle,
+  ChevronDown,
+  X,
+} from "lucide-react";
 import { useCart } from "../app/CartContext";
-
 
 const Navbar = () => {
   const { cart, removeFromCart } = useCart();
-  const [isCartOpen, setIsCartOpen] = useState(false);
 
-  // Check screen size
+  // State variables
+  const [isMobile, setIsMobile] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false);
+
+  // Refs
+  const contactDropdownRef = useRef(null);
+  const menuDropdownRef = useRef(null);
+  const searchRef = useRef(null);
+
+  // Handle screen resize
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    
-    return () => window.removeEventListener('resize', checkScreenSize);
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (contactDropdownRef.current && !contactDropdownRef.current.contains(event.target)) {
+      if (
+        contactDropdownRef.current &&
+        !contactDropdownRef.current.contains(event.target)
+      ) {
         setIsContactDropdownOpen(false);
       }
-      if (menuDropdownRef.current && !menuDropdownRef.current.contains(event.target)) {
+      if (
+        menuDropdownRef.current &&
+        !menuDropdownRef.current.contains(event.target)
+      ) {
         setIsMenuOpen(false);
       }
       if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -35,43 +59,47 @@ const Navbar = () => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const menuItems = [
-    'Home',
-    'Store', 
-    'Explore',
-    'Vision',
-    'Mission',
-    'Brogues',
-    'Mules',
-    'Boots',
-    'Loafers',
-    'Sandals',
-    'Bespoke/Custom made',
-    'Connect with us'
+    "Home",
+    "Store",
+    "Explore",
+    "Vision",
+    "Mission",
+    "Brogues",
+    "Mules",
+    "Boots",
+    "Loafers",
+    "Sandals",
+    "Bespoke/Custom made",
+    "Connect with us",
   ];
 
   const contactMethods = [
-    { icon: Phone, label: 'Phone', value: '+234 123 456 7890' },
-    { icon: Mail, label: 'Email', value: 'contact@luona.com' },
-    { icon: MessageCircle, label: 'WhatsApp', value: 'Chat with us' }
+    { icon: Phone, label: "Phone", value: "+234 123 456 7890" },
+    { icon: Mail, label: "Email", value: "contact@luona.com" },
+    { icon: MessageCircle, label: "WhatsApp", value: "Chat with us" },
   ];
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          
-         {/* Desktop Layout */}
+          {/* Desktop Layout */}
           {!isMobile && (
             <>
               {/* Left: Contact Us Dropdown */}
-              <div className="relative flex items-center" ref={contactDropdownRef}>
+              <div
+                className="relative flex items-center"
+                ref={contactDropdownRef}
+              >
                 <button
-                  onClick={() => setIsContactDropdownOpen(!isContactDropdownOpen)}
+                  onClick={() =>
+                    setIsContactDropdownOpen(!isContactDropdownOpen)
+                  }
                   className="flex items-center space-x-1 text-gray-900 hover:text-gray-900 font-medium transition-colors duration-200"
                 >
                   <span>Contact Us</span>
@@ -90,7 +118,7 @@ const Navbar = () => {
                       : "opacity-0 scale-y-95 -translate-y-2 pointer-events-none"
                   }`}
                 >
-                  <div className="py-4 pt-24">
+                  <div className="py-4">
                     {contactMethods.map((method, index) => (
                       <button
                         key={index}
@@ -98,8 +126,12 @@ const Navbar = () => {
                       >
                         <method.icon className="w-5 h-5 text-gray-600" />
                         <div>
-                          <div className="font-medium text-gray-900">{method.label}</div>
-                          <div className="text-sm text-gray-600">{method.value}</div>
+                          <div className="font-medium text-gray-900">
+                            {method.label}
+                          </div>
+                          <div className="text-sm text-gray-600">
+                            {method.value}
+                          </div>
                         </div>
                       </button>
                     ))}
@@ -112,7 +144,7 @@ const Navbar = () => {
                 <img
                   src="/logo.jpg"
                   alt="Luona Logo"
-                  className="h-16 w-auto" // increased size from h-16 → h-20
+                  className="h-16 w-auto"
                 />
               </div>
 
@@ -128,11 +160,13 @@ const Navbar = () => {
                   </button>
 
                   {/* Search Dropdown */}
-                  <div className={`absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top-right ${
-                    isSearchOpen 
-                      ? 'opacity-100 scale-100 translate-y-0' 
-                      : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
-                  }`}>
+                  <div
+                    className={`absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top-right ${
+                      isSearchOpen
+                        ? "opacity-100 scale-100 translate-y-0"
+                        : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                    }`}
+                  >
                     <div className="p-4">
                       <input
                         type="text"
@@ -143,64 +177,70 @@ const Navbar = () => {
                   </div>
                 </div>
 
-                {/* Cart */}
-                 {/* Cart with Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setIsCartOpen(!isCartOpen)}
-              className="p-2 text-gray-700 hover:text-gray-900 transition-colors duration-200 relative"
-            >
-              <ShoppingBag className="w-5 h-5" />
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                {cart.length}
-              </span>
-            </button>
+                {/* Cart with Dropdown */}
+                <div className="relative">
+                  <button
+                    onClick={() => setIsCartOpen(!isCartOpen)}
+                    className="p-2 text-gray-700 hover:text-gray-900 transition-colors duration-200 relative"
+                  >
+                    <ShoppingBag className="w-5 h-5" />
+                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                      {cart.length}
+                    </span>
+                  </button>
 
-            {/* Dropdown */}
-            {isCartOpen && (
-              <div className="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg border z-50">
-                <div className="p-4">
-                  <h3 className="text-sm font-semibold text-gray-900 mb-2">
-                    Shopping Cart
-                  </h3>
+                  {isCartOpen && (
+                    <div className="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg border z-50">
+                      <div className="p-4">
+                        <h3 className="text-sm font-semibold text-gray-900 mb-2">
+                          Shopping Cart
+                        </h3>
 
-                  {cart.length === 0 ? (
-                    <p className="text-sm text-gray-600">Your cart is empty</p>
-                  ) : (
-                    <ul className="divide-y divide-gray-200 max-h-64 overflow-y-auto">
-                      {cart.map((item, index) => (
-                        <li key={index} className="py-2 flex items-center justify-between">
-                          <div>
-                            <p className="text-sm font-medium">{item.name}</p>
-                            <p className="text-xs text-gray-500">
-                              Size: {item.size} | Qty: {item.quantity}
-                            </p>
-                            <p className="text-xs text-gray-700">
-                              ₦{(item.price * item.quantity).toLocaleString()}
-                            </p>
+                        {cart.length === 0 ? (
+                          <p className="text-sm text-gray-600">
+                            Your cart is empty
+                          </p>
+                        ) : (
+                          <ul className="divide-y divide-gray-200 max-h-64 overflow-y-auto">
+                            {cart.map((item, index) => (
+                              <li
+                                key={index}
+                                className="py-2 flex items-center justify-between"
+                              >
+                                <div>
+                                  <p className="text-sm font-medium">
+                                    {item.name}
+                                  </p>
+                                  <p className="text-xs text-gray-500">
+                                    Size: {item.size} | Qty: {item.quantity}
+                                  </p>
+                                  <p className="text-xs text-gray-700">
+                                    ₦
+                                    {(item.price * item.quantity).toLocaleString()}
+                                  </p>
+                                </div>
+                                <button
+                                  onClick={() => removeFromCart(index)}
+                                  className="text-red-500 text-xs hover:underline"
+                                >
+                                  Remove
+                                </button>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+
+                        {cart.length > 0 && (
+                          <div className="mt-4">
+                            <button className="w-full bg-black text-white py-2 rounded text-sm font-medium hover:bg-gray-800">
+                              Checkout
+                            </button>
                           </div>
-                          <button
-                            onClick={() => removeFromCart(index)}
-                            className="text-red-500 text-xs hover:underline"
-                          >
-                            Remove
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-
-                  {cart.length > 0 && (
-                    <div className="mt-4">
-                      <button className="w-full bg-black text-white py-2 rounded text-sm font-medium hover:bg-gray-800">
-                        Checkout
-                      </button>
+                        )}
+                      </div>
                     </div>
                   )}
                 </div>
-              </div>
-            )}
-          </div>
 
                 {/* Menu Button */}
                 <div className="relative" ref={menuDropdownRef}>
@@ -211,13 +251,15 @@ const Navbar = () => {
                     <Menu className="w-5 h-5" />
                     <span>MENU</span>
                   </button>
-                  
+
                   {/* Menu Dropdown */}
-                  <div className={`absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top-right ${
-                    isMenuOpen 
-                      ? 'opacity-100 scale-100 translate-y-0' 
-                      : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
-                  }`}>
+                  <div
+                    className={`absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top-right ${
+                      isMenuOpen
+                        ? "opacity-100 scale-100 translate-y-0"
+                        : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                    }`}
+                  >
                     <div className="py-2">
                       {menuItems.map((item, index) => (
                         <button
@@ -239,11 +281,7 @@ const Navbar = () => {
             <>
               {/* Left: Logo */}
               <div className="flex-1 justify-center flex items-center">
-                <img 
-                  src="/logo.jpg" 
-                  alt="Luona Logo" 
-                  className="h-8 w-auto"
-                />
+                <img src="/logo.jpg" alt="Luona Logo" className="h-8 w-auto" />
               </div>
 
               {/* Right: Menu Button */}
@@ -259,24 +297,35 @@ const Navbar = () => {
 
         {/* Mobile Menu Dropdown */}
         {isMobile && (
-          <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
-            isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-          }`}>
+          <div
+            className={`overflow-hidden transition-all duration-300 ease-in-out ${
+              isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+            }`}
+          >
             <div className="py-4 border-t border-gray-200">
-              
               {/* Contact Section */}
               <div className="mb-4">
                 <button
-                  onClick={() => setIsContactDropdownOpen(!isContactDropdownOpen)}
+                  onClick={() =>
+                    setIsContactDropdownOpen(!isContactDropdownOpen)
+                  }
                   className="w-full flex items-center justify-between px-4 py-2 text-left text-gray-700 hover:bg-gray-50 font-medium"
                 >
                   <span>Contact Us</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isContactDropdownOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-200 ${
+                      isContactDropdownOpen ? "rotate-180" : ""
+                    }`}
+                  />
                 </button>
-                
-                <div className={`overflow-hidden transition-all duration-300 ${
-                  isContactDropdownOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
-                }`}>
+
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${
+                    isContactDropdownOpen
+                      ? "max-h-48 opacity-100"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
                   <div className="bg-gray-50 mx-4 rounded-lg mt-2">
                     {contactMethods.map((method, index) => (
                       <button
@@ -285,8 +334,12 @@ const Navbar = () => {
                       >
                         <method.icon className="w-5 h-5 text-gray-600" />
                         <div>
-                          <div className="font-medium text-gray-900">{method.label}</div>
-                          <div className="text-sm text-gray-600">{method.value}</div>
+                          <div className="font-medium text-gray-900">
+                            {method.label}
+                          </div>
+                          <div className="text-sm text-gray-600">
+                            {method.value}
+                          </div>
                         </div>
                       </button>
                     ))}
@@ -309,7 +362,7 @@ const Navbar = () => {
               {/* Cart */}
               <button className="w-full flex items-center space-x-3 px-4 py-2 text-left text-gray-700 hover:bg-gray-50 transition-colors duration-150">
                 <ShoppingBag className="w-5 h-5" />
-                <span>Cart (0)</span>
+                <span>Cart ({cart.length})</span>
               </button>
 
               {/* Menu Items */}
