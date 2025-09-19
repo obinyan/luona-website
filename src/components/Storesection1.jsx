@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useCart } from "./CartContext";
 
 const ShoesForKings = () => {
   const [selectedProducts, setSelectedProducts] = useState({
@@ -55,11 +56,18 @@ const ShoesForKings = () => {
     }));
   };
 
+  const { addToCart } = useCart();
+
   const handleAddToCart = (productId) => {
-    const product = selectedProducts[productId];
-    console.log(
-      `Added to cart: Product ${productId}, Size: ${product.size}, Quantity: ${product.quantity}`
-    );
+    const product = products.find((p) => p.id === productId);
+    const selection = selectedProducts[productId];
+
+    if (!selection.size) {
+      alert("Please select a size before adding to cart");
+      return;
+    }
+
+    addToCart(product, selection.size, selection.quantity);
   };
 
   return (

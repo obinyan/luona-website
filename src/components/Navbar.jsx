@@ -2,17 +2,12 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Search, ShoppingBag, Menu, Phone, Mail, MessageCircle, ChevronDown, X } from "lucide-react";
+import { useCart } from "./CartContext";
 
 
 const Navbar = () => {
-  const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  
-  const contactDropdownRef = useRef(null);
-  const menuDropdownRef = useRef(null);
-  const searchRef = useRef(null);
+  const { cart, removeFromCart } = useCart();
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   // Check screen size
   useEffect(() => {
@@ -149,12 +144,63 @@ const Navbar = () => {
                 </div>
 
                 {/* Cart */}
-                <button className="p-2 text-gray-700 hover:text-gray-900 transition-colors duration-200 relative">
-                  <ShoppingBag className="w-5 h-5" />
-                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                    0
-                  </span>
-                </button>
+                 {/* Cart with Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setIsCartOpen(!isCartOpen)}
+              className="p-2 text-gray-700 hover:text-gray-900 transition-colors duration-200 relative"
+            >
+              <ShoppingBag className="w-5 h-5" />
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                {cart.length}
+              </span>
+            </button>
+
+            {/* Dropdown */}
+            {isCartOpen && (
+              <div className="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg border z-50">
+                <div className="p-4">
+                  <h3 className="text-sm font-semibold text-gray-900 mb-2">
+                    Shopping Cart
+                  </h3>
+
+                  {cart.length === 0 ? (
+                    <p className="text-sm text-gray-600">Your cart is empty</p>
+                  ) : (
+                    <ul className="divide-y divide-gray-200 max-h-64 overflow-y-auto">
+                      {cart.map((item, index) => (
+                        <li key={index} className="py-2 flex items-center justify-between">
+                          <div>
+                            <p className="text-sm font-medium">{item.name}</p>
+                            <p className="text-xs text-gray-500">
+                              Size: {item.size} | Qty: {item.quantity}
+                            </p>
+                            <p className="text-xs text-gray-700">
+                              ₦{(item.price * item.quantity).toLocaleString()}
+                            </p>
+                          </div>
+                          <button
+                            onClick={() => removeFromCart(index)}
+                            className="text-red-500 text-xs hover:underline"
+                          >
+                            Remove
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {cart.length > 0 && (
+                    <div className="mt-4">
+                      <button className="w-full bg-black text-white py-2 rounded text-sm font-medium hover:bg-gray-800">
+                        Checkout
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
 
                 {/* Menu Button */}
                 <div className="relative" ref={menuDropdownRef}>
