@@ -381,11 +381,65 @@ const Navbar = () => {
                 </div>
               </div>
 
-              {/* Cart */}
-              <button className="w-full flex items-center space-x-3 px-4 py-2 text-left text-gray-700 hover:bg-gray-50 transition-colors duration-150">
-                <ShoppingBag className="w-5 h-5" />
-                <span>Cart ({cart.length})</span>
-              </button>
+              {/* Cart (Mobile) */}
+<div className="px-4 py-2 border-t border-gray-200" ref={cartRef}>
+  <button
+    onClick={() => setIsCartOpen((s) => !s)}
+    className="w-full flex items-center space-x-3 text-left text-gray-700 hover:bg-gray-50 transition-colors duration-150"
+  >
+    <ShoppingBag className="w-5 h-5" />
+    <span>Cart ({cart.length})</span>
+  </button>
+
+  {/* Mobile Cart Dropdown */}
+  {isCartOpen && (
+    <div className="mt-2 bg-white rounded-lg shadow-lg border">
+      <div className="p-4">
+        <h3 className="text-sm font-semibold text-black mb-2">
+          Shopping Cart
+        </h3>
+
+        {cart.length === 0 ? (
+          <p className="text-sm text-black">Your cart is empty</p>
+        ) : (
+          <ul className="divide-y divide-gray-200 max-h-64 overflow-y-auto">
+            {cart.map((item, index) => (
+              <li
+                key={item.id ? `${item.id}-${item.size}` : index}
+                className="py-2 flex items-center justify-between"
+              >
+                <div>
+                  <p className="text-sm font-medium">{item.name}</p>
+                  <p className="text-xs text-gray-900">
+                    Size: {item.size} | Qty: {item.quantity}
+                  </p>
+                  <p className="text-xs text-gray-900">
+                    ₦{(item.price * item.quantity).toLocaleString()}
+                  </p>
+                </div>
+                <button
+                  onClick={() => removeFromCart(index)}
+                  className="text-red-900 text-xs hover:underline"
+                >
+                  Remove
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {cart.length > 0 && (
+          <div className="mt-4">
+            <button className="w-full bg-black text-white py-2 rounded text-sm font-medium hover:bg-gray-800">
+              Checkout — ₦{getCartTotal().toLocaleString()}
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  )}
+</div>
+
 
               {/* Menu Items */}
               <div className="border-t border-gray-200 mt-4 pt-4">
