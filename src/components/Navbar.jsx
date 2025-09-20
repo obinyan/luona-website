@@ -223,14 +223,14 @@ const Navbar = () => {
                             Your cart is empty
                           </p>
                         ) : (
-                          <ul className="divide-y divide-gray-200 max-h-64 overflow-y-auto">
+                          <ul className="divide-y divide-gray-900 max-h-64 overflow-y-auto">
                             {cart.map((item, index) => (
                               <li
                                 key={item.id ? `${item.id}-${item.size}` : index}
-                                className="py-2 flex items-center justify-between"
+                                className="py-2 flex items-center justify-between text-black"
                               >
                                 <div>
-                                  <p className="text-sm font-medium">
+                                  <p className="text-sm font-medium text-black">
                                     {item.name}
                                   </p>
                                   <p className="text-xs text-gray-900">
@@ -409,7 +409,7 @@ const Navbar = () => {
                 className="py-2 flex items-center justify-between text-black"
               >
                 <div>
-                  <p className="text-sm font-medium">{item.name}</p>
+                  <p className="text-sm font-medium text-black">{item.name}</p>
                   <p className="text-xs text-gray-900">
                     Size: {item.size} | Qty: {item.quantity}
                   </p>
