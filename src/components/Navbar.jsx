@@ -359,14 +359,27 @@ const Navbar = () => {
           >
             <div className="py-4 border-t border-gray-200">
               {/* Contact Section */}
-              <div
-  className={`absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top ${
-    isContactDropdownOpen
-      ? "opacity-100 scale-y-100 translate-y-0"
-      : "opacity-0 scale-y-95 -translate-y-2 pointer-events-none"
+              <div className="mb-4">
+                <button
+                  onClick={() =>
+                    setIsContactDropdownOpen(!isContactDropdownOpen)
+                  }
+                  className="w-full flex items-center justify-between px-4 py-2 text-left text-gray-700 hover:bg-gray-50 font-medium"
+                >
+                  <span>Contact Us</span>
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-200 ${
+                      isContactDropdownOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                <div
+  className={`overflow-hidden transition-all duration-300 ${
+    isContactDropdownOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
   }`}
 >
-  <div className="py-4 pb-12">
+  <div className="bg-gray-50 mx-4 rounded-lg mt-2">
     {contactMethods.map((method, index) => {
       let href = "#";
 
@@ -384,22 +397,20 @@ const Navbar = () => {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full px-4 py-3 text-left hover:bg-gray-50 flex items-center space-x-3 transition-colors duration-150"
+          className="w-full block px-4 py-3 text-left hover:bg-gray-100 flex items-center space-x-3 transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg"
         >
           <method.icon className="w-5 h-5 text-gray-600" />
           <div>
-            <div className="font-medium text-gray-900">
-              {method.label}
-            </div>
-            <div className="text-sm text-gray-600">
-              {method.value}
-            </div>
+            <div className="font-medium text-gray-900">{method.label}</div>
+            <div className="text-sm text-gray-600">{method.value}</div>
           </div>
         </a>
       );
     })}
   </div>
 </div>
+
+              </div>
 
               {/* Search */}
               <div className="mb-4 px-4">
