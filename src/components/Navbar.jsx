@@ -402,11 +402,11 @@ const Navbar = () => {
         {cart.length === 0 ? (
           <p className="text-sm text-black">Your cart is empty</p>
         ) : (
-          <ul className="divide-y divide-gray-200 max-h-64 overflow-y-auto">
+          <ul className="divide-y divide-gray-900 max-h-64 overflow-y-auto">
             {cart.map((item, index) => (
               <li
                 key={item.id ? `${item.id}-${item.size}` : index}
-                className="py-2 flex items-center justify-between"
+                className="py-2 flex items-center justify-between text-black"
               >
                 <div>
                   <p className="text-sm font-medium">{item.name}</p>
