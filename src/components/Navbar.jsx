@@ -253,12 +253,45 @@ const Navbar = () => {
                         )}
 
                         {cart.length > 0 && (
-                          <div className="mt-4">
-                            <button className="w-full bg-black text-white py-2 rounded text-sm font-medium hover:bg-gray-800">
-                              Checkout — ₦{getCartTotal().toLocaleString()}
-                            </button>
-                          </div>
-                        )}
+  <div className="mt-4 space-y-2">
+    {/* WhatsApp Checkout */}
+    <a
+      href={`https://wa.me/2348143164423?text=${encodeURIComponent(
+        `Hello, I'd like to checkout my order:\n\n${cart
+          .map(
+            (item) =>
+              `${item.name} - Size: ${item.size}, Qty: ${item.quantity}, Price: ₦${(
+                item.price * item.quantity
+              ).toLocaleString()}`
+          )
+          .join("\n")}\n\nTotal: ₦${getCartTotal().toLocaleString()}`
+      )}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full block bg-green-600 text-white py-2 rounded text-sm font-medium hover:bg-green-700 text-center"
+    >
+      Checkout via WhatsApp
+    </a>
+
+    {/* Email Checkout */}
+    <a
+      href={`mailto:okojiebenjamin@gmail.com?subject=Order Checkout&body=${encodeURIComponent(
+        `Hello, I'd like to checkout my order:\n\n${cart
+          .map(
+            (item) =>
+              `${item.name} - Size: ${item.size}, Qty: ${item.quantity}, Price: ₦${(
+                item.price * item.quantity
+              ).toLocaleString()}`
+          )
+          .join("\n")}\n\nTotal: ₦${getCartTotal().toLocaleString()}`
+      )}`}
+      className="w-full block bg-blue-600 text-white py-2 rounded text-sm font-medium hover:bg-blue-700 text-center"
+    >
+      Checkout via Email
+    </a>
+  </div>
+)}
+
                       </div>
                     </div>
                   )}
@@ -428,13 +461,46 @@ const Navbar = () => {
           </ul>
         )}
 
-        {cart.length > 0 && (
-          <div className="mt-4">
-            <button className="w-full bg-black text-white py-2 rounded text-sm font-medium hover:bg-gray-800">
-              Checkout — ₦{getCartTotal().toLocaleString()}
-            </button>
-          </div>
-        )}
+       {cart.length > 0 && (
+  <div className="mt-4 space-y-2">
+    {/* WhatsApp Checkout */}
+    <a
+      href={`https://wa.me/2348143164423?text=${encodeURIComponent(
+        `Hello, I'd like to checkout my order:\n\n${cart
+          .map(
+            (item) =>
+              `${item.name} - Size: ${item.size}, Qty: ${item.quantity}, Price: ₦${(
+                item.price * item.quantity
+              ).toLocaleString()}`
+          )
+          .join("\n")}\n\nTotal: ₦${getCartTotal().toLocaleString()}`
+      )}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full block bg-green-600 text-white py-2 rounded text-sm font-medium hover:bg-green-700 text-center"
+    >
+      Checkout via WhatsApp
+    </a>
+
+    {/* Email Checkout */}
+    <a
+      href={`mailto:okojiebenjamin@gmail.com?subject=Order Checkout&body=${encodeURIComponent(
+        `Hello, I'd like to checkout my order:\n\n${cart
+          .map(
+            (item) =>
+              `${item.name} - Size: ${item.size}, Qty: ${item.quantity}, Price: ₦${(
+                item.price * item.quantity
+              ).toLocaleString()}`
+          )
+          .join("\n")}\n\nTotal: ₦${getCartTotal().toLocaleString()}`
+      )}`}
+      className="w-full block bg-blue-600 text-white py-2 rounded text-sm font-medium hover:bg-blue-700 text-center"
+    >
+      Checkout via Email
+    </a>
+  </div>
+)}
+
       </div>
     </div>
   )}
