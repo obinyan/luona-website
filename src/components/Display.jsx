@@ -25,7 +25,7 @@ const ShoeStylesSection = () => {
     {
       id: 4,
       image: "/boots 12.jpg",
-      title: "Leather Boots",
+      title: "Suede Boots",
       link: "/store/leather-boots"
     }
   ];

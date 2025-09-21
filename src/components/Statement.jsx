@@ -50,9 +50,16 @@ export default function VisionMissionSection() {
               <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
                 GET 10% OFF YOUR ORDER
               </h3>
-              <button className="bg-gray-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200">
-                Claim Offer
-              </button>
+              <li>
+                <a 
+                  href="https://www.instagram.com/invites/contact/?igsh=1ofafxbo394x3&utm_content=pw07qmj" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                >
+                  Claim Offer
+                </a>
+              </li>
             </div>
           </div>
         </div>
