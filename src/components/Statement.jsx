@@ -57,7 +57,7 @@ export default function VisionMissionSection() {
                   rel="noopener noreferrer"
                   className="bg-gray-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200"
                 >
-                  Instagram
+                  Claim Offer
                 </a>
               </li>
             </div>
