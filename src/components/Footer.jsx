@@ -41,15 +41,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="/contact" 
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
-                >
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/vision" 
+                  href="/#vision" 
                   className="text-gray-300 hover:text-white transition-colors duration-300"
                 >
                   Vision
@@ -57,7 +49,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="/mission" 
+                  href="/#mission" 
                   className="text-gray-300 hover:text-white transition-colors duration-300"
                 >
                   Mission
@@ -92,7 +84,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="https://instagram.com/luonabrand" 
+                  href="https://www.instagram.com/invites/contact/?igsh=1ofafxbo394x3&utm_content=pw07qmj" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors duration-300"
