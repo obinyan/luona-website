@@ -67,7 +67,7 @@ const ShoeShowcase = () => {
         </div>
 
         {/* Shop Now Button */}
-        <div className="text-center z-20 relative">
+        <div className="text-center z-20 relative pt-10">
           <Link
   href="/store"
   className="group inline-flex items-center px-8 py-4 md:px-10 md:py-5 bg-transparent border-2 border-black text-black font-semibold text-lg md:text-xl rounded-full hover:bg-black hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl"

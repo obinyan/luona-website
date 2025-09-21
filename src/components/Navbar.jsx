@@ -310,26 +310,25 @@ const Navbar = () => {
 
                   {/* Menu Dropdown */}
                   <div
-                    className={`absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top-right ${
+                    className={`absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top-right ${
                       isMenuOpen
                         ? "opacity-100 scale-100 translate-y-0"
                         : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
                     }`}
                   >
-                    <div className="py-2">
-  {menuItems.map((item, index) => (
-  <Link
-  key={index}
-  href={item.href}
-  className="w-full px-4 py-2 text-left hover:bg-gray-50 text-gray-900 hover:text-gray-900 transition-colors duration-150"
->
-  {item.label}
-</Link>
-
-))}
-</div>
-
+                    <div className="py-2 max-h-96 overflow-y-auto">
+                      {menuItems.map((item, index) => (
+                        <Link
+                          key={index}
+                          href={item.href}
+                          className="block w-full px-4 py-2 text-left hover:bg-gray-50 text-gray-900 transition-colors duration-150"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
+
                 </div>
               </div>
             </>
