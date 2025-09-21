@@ -63,23 +63,13 @@ const ShoeShowcase = () => {
         </div>
 
         {/* Shop Now Button */}
-        <div className="text-center mt-12">
-          <button className="inline-flex items-center px-8 py-3 border-2 border-black text-black font-medium hover:bg-black hover:text-white transition-colors duration-300 rounded-full">
-            Shop Now
-            <svg
-              className="ml-2 w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
+        <div className="text-center z-20 relative">
+          <Link href="/store">
+            <button className="group inline-flex items-center px-8 py-4 md:px-10 md:py-5 bg-transparent border-2 border-black text-black font-semibold text-lg md:text-xl rounded-full hover:bg-black hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+              <span className="mr-3">Shop Now</span>
+              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 transform group-hover:translate-x-1 transition-transform duration-200" />
+            </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -25,7 +25,12 @@ const BespokeSection = () => {
                 Get a Bespoke/custom made shoe
               </h2>
 
-              <button className="inline-flex items-center px-8 py-3 border-2 border-black text-black font-medium hover:bg-black hover:text-white transition-colors duration-300 rounded-full">
+              <a
+                href="https://wa.me/234814 316 4423" // replace with your external link
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-8 py-3 border-2 border-black text-black font-medium hover:bg-black hover:text-white transition-colors duration-300 rounded-full"
+              >
                 Get in Touch
                 <svg
                   className="ml-2 w-4 h-4"
@@ -40,7 +45,8 @@ const BespokeSection = () => {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </button>
+              </a>
+
             </div>
           </div>
         </div>
