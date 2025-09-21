@@ -12,6 +12,7 @@ import {
   X,
 } from "lucide-react";
 import { useCart } from "@/app/CartContext";
+import Link from "next/link";   // ✅ import Link
 
 const Navbar = () => {
   const { cart, removeFromCart, getCartCount, getCartTotal } = useCart();
@@ -67,19 +68,19 @@ const Navbar = () => {
   }, []);
 
   const menuItems = [
-    "Home",
-    "Store",
-    "Explore",
-    "Vision",
-    "Mission",
-    "Brogues",
-    "Mules",
-    "Boots",
-    "Loafers",
-    "Sandals",
-    "Bespoke/Custom made",
-    "Connect with us",
-  ];
+  { label: "Home", href: "/" },                 // landing page
+  { label: "Store", href: "/store" },           // store landing
+  { label: "Explore", href: "/store" },         // same as store
+  { label: "Vision", href: "/#vision" },        // scroll on homepage
+  { label: "Mission", href: "/#mission" },      // scroll on homepage
+  { label: "Brogues", href: "/store#brogues" }, // scroll inside store
+  { label: "Mules", href: "/store#mules" },
+  { label: "Boots", href: "/store#boots" },
+  { label: "Loafers", href: "/store#loafers" },
+  { label: "Sandals", href: "/store#sandals" },
+  { label: "Bespoke/Custom made", href: "https://wa.me/234814 316 4423" }, // your WhatsApp number
+  { label: "Connect with us", href: "/#connect" }, // footer on homepage
+];
 
   const contactMethods = [
     { icon: Phone, label: "Phone", value: "+234 814 316 4423" },
@@ -121,7 +122,7 @@ const Navbar = () => {
       : "opacity-0 scale-y-95 -translate-y-2 pointer-events-none"
   }`}
 >
-  <div className="py-4 pt-32">
+  <div className="py-8 pt-36">
     {contactMethods.map((method, index) => {
       let href = "#";
 
@@ -316,15 +317,17 @@ const Navbar = () => {
                     }`}
                   >
                     <div className="py-2">
-                      {menuItems.map((item, index) => (
-                        <button
-                          key={index}
-                          className="w-full px-4 py-2 text-left hover:bg-gray-50 text-gray-700 hover:text-gray-900 transition-colors duration-150"
-                        >
-                          {item}
-                        </button>
-                      ))}
-                    </div>
+  {menuItems.map((item, index) => (
+  <Link key={index} href={item.href}>
+    <button
+      className="w-full px-4 py-2 text-left hover:bg-gray-50 text-gray-900 hover:text-gray-900 transition-colors duration-150"
+    >
+      {item.label}
+    </button>
+  </Link>
+))}
+</div>
+
                   </div>
                 </div>
               </div>
@@ -359,7 +362,7 @@ const Navbar = () => {
           >
             <div className="py-4 border-t border-gray-200">
               {/* Contact Section */}
-              <div className="mb-4">
+              <div className="mb-8">
                 <button
                   onClick={() =>
                     setIsContactDropdownOpen(!isContactDropdownOpen)
@@ -379,7 +382,7 @@ const Navbar = () => {
     isContactDropdownOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
   }`}
 >
-  <div className="bg-gray-50 mx-4 rounded-lg mt-2">
+  <div className="bg-gray-50 mx-4 rounded-lg mt-2 mb-4">
     {contactMethods.map((method, index) => {
       let href = "#";
 
@@ -519,15 +522,17 @@ const Navbar = () => {
 
               {/* Menu Items */}
               <div className="border-t border-gray-200 mt-4 pt-4">
-                {menuItems.map((item, index) => (
-                  <button
-                    key={index}
-                    className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50 transition-colors duration-150"
-                  >
-                    {item}
-                  </button>
-                ))}
-              </div>
+  {menuItems.map((item, index) => (
+    <Link
+      key={index}
+      href={item.href}
+      className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50 transition-colors duration-150"
+    >
+      {item.label}
+    </Link>
+  ))}
+</div>
+
             </div>
           </div>
         )}

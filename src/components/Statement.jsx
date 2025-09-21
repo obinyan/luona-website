@@ -10,19 +10,23 @@ export default function VisionMissionSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {/* Vision Card */}
           <div className="bg-white p-8 rounded-lg shadow-md border border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Vision</h3>
-            <p className="text-gray-700 leading-relaxed">
-              We build luxury leather shoes that speaks class and style.
-            </p>
+            <div id='vision'>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Vision</h3>
+              <p className="text-gray-700 leading-relaxed">
+                We build luxury leather shoes that speaks class and style.
+              </p>
+            </div>
           </div>
           
           {/* Mission Card */}
           <div className="bg-white p-8 rounded-lg shadow-md border border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Mission</h3>
-            <p className="text-gray-700 leading-relaxed">
-              We are dedicated to handcrafting exceptional leather shoes using ethical sourced materials. 
-              We honor traditional techniques while offering our customers footwears that stand out.
-            </p>
+            <div id='mission'>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Mission</h3>
+              <p className="text-gray-700 leading-relaxed">
+                We are dedicated to handcrafting exceptional leather shoes using ethical sourced materials. 
+                We honor traditional techniques while offering our customers footwears that stand out.
+              </p>
+            </div>
           </div>
         </div>
         
