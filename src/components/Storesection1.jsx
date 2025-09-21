@@ -72,8 +72,8 @@ const ShoesForKings = () => {
 
   return (
     <div id="brogues" className="min-h-screen bg-white py-8 px-4 pt-24 pb-10">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-2xl font-bold text-gray-900 mb-12 tracking-wide">
+      <div className="max-w-7xl mx-auto text-center">
+        <h1 className="text-2xl text-center font-bold text-gray-900 mb-12 tracking-wide">
           SHOES FOR KINGS
         </h1>
 
