@@ -78,7 +78,7 @@ const Navbar = () => {
   { label: "Boots", href: "/store#boots" },
   { label: "Loafers", href: "/store#loafers" },
   { label: "Sandals", href: "/store#sandals" },
-  { label: "Bespoke/Custom made", href: "https://wa.me/234814 316 4423" }, // your WhatsApp number
+  { label: "Bespoke/Custom made", href: "https://wa.me/2348143164423" },
   { label: "Connect with us", href: "/#connect" }, // footer on homepage
 ];
 
@@ -318,13 +318,14 @@ const Navbar = () => {
                   >
                     <div className="py-2">
   {menuItems.map((item, index) => (
-  <Link key={index} href={item.href}>
-    <button
-      className="w-full px-4 py-2 text-left hover:bg-gray-50 text-gray-900 hover:text-gray-900 transition-colors duration-150"
-    >
-      {item.label}
-    </button>
-  </Link>
+  <Link
+  key={index}
+  href={item.href}
+  className="w-full px-4 py-2 text-left hover:bg-gray-50 text-gray-900 hover:text-gray-900 transition-colors duration-150"
+>
+  {item.label}
+</Link>
+
 ))}
 </div>
 
