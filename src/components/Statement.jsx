@@ -55,9 +55,9 @@ export default function VisionMissionSection() {
                   href="https://www.instagram.com/invites/contact/?igsh=1ofafxbo394x3&utm_content=pw07qmj" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="bg-gray-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200"
                 >
-                  Claim Offer
+                  Instagram
                 </a>
               </li>
             </div>
