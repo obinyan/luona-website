@@ -35,7 +35,7 @@ const ShoesForKings = () => {
     },
     {
       id: 3,
-      name: "Men's Leather Slide Sandals",
+      name: "Brown leather Sandals",
       price: 40000,
       image: "/sandals 21.png",
       colors: ["brown", "tan"],

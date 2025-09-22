@@ -14,28 +14,28 @@ const ShoesForKings = () => {
   const products = [
     {
       id: 0,
-      name: "Black and white leather Oxford wingtip brogues",
+      name: "Black and white wingtip Oxford",
       price: 70000,
       image: "/brogues 4.jpg",
       colors: ["white", "black"],
     },
     {
       id: 1,
-      name: "Black leather Oxford brogues",
+      name: "Shiny Black brogues",
       price: 70000,
       image: "/brogues 2.jpg",
       colors: ["brown", "beige"],
     },
     {
       id: 2,
-      name: "Casual Oxford suede brogues",
+      name: "Suede Derby",
       price: 70000,
       image: "/brogues 11.jpg",
       colors: ["navy", "gray"],
     },
     {
       id: 3,
-      name: "Brown Oxford leather Brogues",
+      name: "Shiny brown Brogues",
       price: 70000,
       image: "/brogues 6.jpg",
       colors: ["brown", "tan"],

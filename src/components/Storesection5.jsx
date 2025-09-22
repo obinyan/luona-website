@@ -28,14 +28,14 @@ const ShoesForKings = () => {
     },
     {
       id: 2,
-      name: "Longton leather Chelsea boot",
+      name: "Longton suede boot",
       price: 85000,
       image: "/boots 6.jpg",
       colors: ["navy", "gray"],
     },
     {
       id: 3,
-      name: "Brown leather wingtip Chelsea boot",
+      name: "Brown patina boot",
       price: 85000,
       image: "/boots 10.jpg",
       colors: ["brown", "tan"],

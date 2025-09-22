@@ -21,7 +21,7 @@ const ShoesForKings = () => {
     },
     {
       id: 1,
-      name: "Two-tone Black and White penny loafers",
+      name: "Two-tone penny loafers",
       price: 70000,
       image: "/loafers 1.jpg",
       colors: ["brown", "beige"],

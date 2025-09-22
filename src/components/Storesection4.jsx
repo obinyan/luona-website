@@ -28,14 +28,14 @@ const ShoesForKings = () => {
     },
     {
       id: 2,
-      name: "Black suede slip-on mule",
+      name: "Black suede mule",
       price: 60000,
       image: "/mules 9.jpg",
       colors: ["navy", "gray"],
     },
     {
       id: 3,
-      name: "Buckle Comfort Slide Mule",
+      name: "Buckle Comfort mule",
       price: 60000,
       image: "/mules 8.png",
       colors: ["brown", "tan"],
