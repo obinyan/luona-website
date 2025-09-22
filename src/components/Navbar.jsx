@@ -180,17 +180,19 @@ const Navbar = () => {
 
                 {/* Cart with Dropdown (Desktop) */}
                 <div className="relative" ref={cartRef}>
-                  <button
-                    onClick={() => setIsCartOpen((s) => !s)}
-                    className="p-2 text-black hover:text-gray-900 transition-colors duration-200 relative"
-                    aria-expanded={isCartOpen}
-                    aria-label="Open cart"
-                  >
-                    <ShoppingBag className="w-5 h-5" />
-                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                      {getCartCount()}
-                    </span>
-                  </button>
+                <button
+  onClick={() => setIsCartOpen((s) => !s)}
+  className="p-2 text-gray-700 hover:text-gray-900 transition-colors duration-200 relative"
+>
+  <ShoppingBag className="w-6 h-6" />
+
+  {/* Show badge only if items exist */}
+  {getCartCount() > 0 && (
+    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+      {getCartCount()}
+    </span>
+  )}
+</button>
 
                   {isCartOpen && (
                     <div className="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg border z-50">
