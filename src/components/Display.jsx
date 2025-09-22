@@ -12,7 +12,7 @@ const ShoeStylesSection = () => {
     },
     {
       id: 2,
-      image: "/loafers 3.jpg",
+      image: "/loafers 4.jpg",
       title: "Penny Loafers",
       link: "/store/penny-loafers"
     },
