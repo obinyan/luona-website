@@ -12,7 +12,7 @@ import {
   X,
 } from "lucide-react";
 import { useCart } from "@/app/CartContext";
-import Link from "next/link";   // ✅ import Link
+import Link from "next/link";
 
 const Navbar = () => {
   const { cart, removeFromCart, getCartCount, getCartTotal } = useCart();
@@ -28,7 +28,7 @@ const Navbar = () => {
   const contactDropdownRef = useRef(null);
   const menuDropdownRef = useRef(null);
   const searchRef = useRef(null);
-  const cartRef = useRef(null); // ✅ new ref for cart
+  const cartRef = useRef(null);
 
   // Handle screen resize
   useEffect(() => {
@@ -49,17 +49,14 @@ const Navbar = () => {
       ) {
         setIsContactDropdownOpen(false);
       }
-      if (
-        menuDropdownRef.current &&
-        !menuDropdownRef.current.contains(event.target)
-      ) {
+      if (menuDropdownRef.current && !menuDropdownRef.current.contains(event.target)) {
         setIsMenuOpen(false);
       }
       if (searchRef.current && !searchRef.current.contains(event.target)) {
         setIsSearchOpen(false);
       }
       if (cartRef.current && !cartRef.current.contains(event.target)) {
-        setIsCartOpen(false); // ✅ close cart
+        setIsCartOpen(false);
       }
     };
 
@@ -68,19 +65,19 @@ const Navbar = () => {
   }, []);
 
   const menuItems = [
-  { label: "Home", href: "/" },                 // landing page
-  { label: "Store", href: "/store" },           // store landing
-  { label: "Explore", href: "/store" },         // same as store
-  { label: "Vision", href: "/#vision" },        // scroll on homepage
-  { label: "Mission", href: "/#mission" },      // scroll on homepage
-  { label: "Brogues", href: "/store#brogues" }, // scroll inside store
-  { label: "Mules", href: "/store#mules" },
-  { label: "Boots", href: "/store#boots" },
-  { label: "Loafers", href: "/store#loafers" },
-  { label: "Sandals", href: "/store#sandals" },
-  { label: "Bespoke/Custom made", href: "https://wa.me/2348143164423" },
-  { label: "Connect with us", href: "/#connect" }, // footer on homepage
-];
+    { label: "Home", href: "/" },
+    { label: "Store", href: "/store" },
+    { label: "Explore", href: "/store" },
+    { label: "Vision", href: "/#vision" },
+    { label: "Mission", href: "/#mission" },
+    { label: "Brogues", href: "/store#brogues" },
+    { label: "Mules", href: "/store#mules" },
+    { label: "Boots", href: "/store#boots" },
+    { label: "Loafers", href: "/store#loafers" },
+    { label: "Sandals", href: "/store#sandals" },
+    { label: "Bespoke/Custom made", href: "https://wa.me/2348143164423" },
+    { label: "Connect with us", href: "/#connect" },
+  ];
 
   const contactMethods = [
     { icon: Phone, label: "Phone", value: "+234 814 316 4423" },
@@ -96,14 +93,9 @@ const Navbar = () => {
           {!isMobile && (
             <>
               {/* Left: Contact Us Dropdown */}
-              <div
-                className="relative flex items-center"
-                ref={contactDropdownRef}
-              >
+              <div className="relative flex items-center" ref={contactDropdownRef}>
                 <button
-                  onClick={() =>
-                    setIsContactDropdownOpen(!isContactDropdownOpen)
-                  }
+                  onClick={() => setIsContactDropdownOpen((s) => !s)}
                   className="flex items-center space-x-1 text-gray-900 hover:text-gray-900 font-medium transition-colors duration-200"
                 >
                   <span>Contact Us</span>
@@ -116,57 +108,47 @@ const Navbar = () => {
 
                 {/* Contact Dropdown */}
                 <div
-  className={`absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top ${
-    isContactDropdownOpen
-      ? "opacity-100 scale-y-100 translate-y-0"
-      : "opacity-0 scale-y-95 -translate-y-2 pointer-events-none"
-  }`}
->
-  <div className="py-8 pt-36">
-    {contactMethods.map((method, index) => {
-      let href = "#";
+                  className={`absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top ${
+                    isContactDropdownOpen
+                      ? "opacity-100 scale-y-100 translate-y-0"
+                      : "opacity-0 scale-y-95 -translate-y-2 pointer-events-none"
+                  }`}
+                >
+                  <div className="py-8 pt-36">
+                    {contactMethods.map((method, index) => {
+                      let href = "#";
 
-      if (method.label === "Phone") {
-        href = `tel:${method.value.replace(/\s+/g, "")}`;
-      } else if (method.label === "Email") {
-        href = `mailto:${method.value}`;
-      } else if (method.label === "WhatsApp") {
-        href = `https://wa.me/2348143164423`;
-      }
+                      if (method.label === "Phone") {
+                        href = `tel:${method.value.replace(/\s+/g, "")}`;
+                      } else if (method.label === "Email") {
+                        href = `mailto:${method.value}`;
+                      } else if (method.label === "WhatsApp") {
+                        href = `https://wa.me/2348143164423`;
+                      }
 
-      return (
-        <a
-          key={index}
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full px-4 py-3 text-left hover:bg-gray-50 flex items-center space-x-3 transition-colors duration-150"
-        >
-          <method.icon className="w-5 h-5 text-gray-600" />
-          <div>
-            <div className="font-medium text-gray-900">
-              {method.label}
-            </div>
-            <div className="text-sm text-gray-600">
-              {method.value}
-            </div>
-          </div>
-        </a>
-      );
-    })}
-  </div>
-</div>
-{/* ✅ no extra newlines, clean closing tags here */}
-
+                      return (
+                        <a
+                          key={index}
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full px-4 py-3 text-left hover:bg-gray-50 flex items-center space-x-3 transition-colors duration-150"
+                        >
+                          <method.icon className="w-5 h-5 text-gray-600" />
+                          <div>
+                            <div className="font-medium text-gray-900">{method.label}</div>
+                            <div className="text-sm text-gray-600">{method.value}</div>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
 
               {/* Center: Logo */}
               <div className="flex-1 flex items-center justify-center">
-                <img
-                  src="/logo.jpg"
-                  alt="Luona Logo"
-                  className="h-16 w-auto"
-                />
+                <img src="/logo.jpg" alt="Luona Logo" className="h-16 w-auto" />
               </div>
 
               {/* Right: Cart, Search, Menu */}
@@ -174,7 +156,7 @@ const Navbar = () => {
                 {/* Search */}
                 <div className="relative" ref={searchRef}>
                   <button
-                    onClick={() => setIsSearchOpen(!isSearchOpen)}
+                    onClick={() => setIsSearchOpen((s) => !s)}
                     className="p-2 text-gray-700 hover:text-gray-900 transition-colors duration-200"
                   >
                     <Search className="w-5 h-5" />
@@ -183,9 +165,7 @@ const Navbar = () => {
                   {/* Search Dropdown */}
                   <div
                     className={`absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top-right ${
-                      isSearchOpen
-                        ? "opacity-100 scale-100 translate-y-0"
-                        : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                      isSearchOpen ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
                     }`}
                   >
                     <div className="p-4">
@@ -198,7 +178,7 @@ const Navbar = () => {
                   </div>
                 </div>
 
-                {/* Cart with Dropdown */}
+                {/* Cart with Dropdown (Desktop) */}
                 <div className="relative" ref={cartRef}>
                   <button
                     onClick={() => setIsCartOpen((s) => !s)}
@@ -215,37 +195,20 @@ const Navbar = () => {
                   {isCartOpen && (
                     <div className="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg border z-50">
                       <div className="p-4">
-                        <h3 className="text-sm font-semibold text-black mb-2">
-                          Shopping Cart
-                        </h3>
+                        <h3 className="text-sm font-semibold text-black mb-2">Shopping Cart</h3>
 
                         {cart.length === 0 ? (
-                          <p className="text-sm text-black">
-                            Your cart is empty
-                          </p>
+                          <p className="text-sm text-black">Your cart is empty</p>
                         ) : (
                           <ul className="divide-y divide-gray-900 max-h-64 overflow-y-auto">
                             {cart.map((item, index) => (
-                              <li
-                                key={item.id ? `${item.id}-${item.size}` : index}
-                                className="py-2 flex items-center justify-between text-black"
-                              >
+                              <li key={item.id ? `${item.id}-${item.size}` : index} className="py-2 flex items-center justify-between text-black">
                                 <div>
-                                  <p className="text-sm font-medium text-black">
-                                    {item.name}
-                                  </p>
-                                  <p className="text-xs text-gray-900">
-                                    Size: {item.size} | Qty: {item.quantity}
-                                  </p>
-                                  <p className="text-xs text-gray-900">
-                                    ₦
-                                    {(item.price * item.quantity).toLocaleString()}
-                                  </p>
+                                  <p className="text-sm font-medium text-black">{item.name}</p>
+                                  <p className="text-xs text-gray-900">Size: {item.size} | Qty: {item.quantity}</p>
+                                  <p className="text-xs text-gray-900">₦{(item.price * item.quantity).toLocaleString()}</p>
                                 </div>
-                                <button
-                                  onClick={() => removeFromCart(index)}
-                                  className="text-red-900 text-xs hover:underline"
-                                >
+                                <button onClick={() => removeFromCart(index)} className="text-red-900 text-xs hover:underline">
                                   Remove
                                 </button>
                               </li>
@@ -254,54 +217,51 @@ const Navbar = () => {
                         )}
 
                         {cart.length > 0 && (
-  <div className="mt-4 space-y-2">
-    {/* WhatsApp Checkout */}
-    <a
-      href={`https://wa.me/2348143164423?text=${encodeURIComponent(
-        `Hello, I'd like to checkout my order:\n\n${cart
-          .map(
-            (item) =>
-              `${item.name} - Size: ${item.size}, Qty: ${item.quantity}, Price: ₦${(
-                item.price * item.quantity
-              ).toLocaleString()}`
-          )
-          .join("\n")}\n\nTotal: ₦${getCartTotal().toLocaleString()}`
-      )}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="w-full block bg-green-600 text-white py-2 rounded text-sm font-medium hover:bg-green-700 text-center"
-    >
-      Checkout via WhatsApp
-    </a>
+                          <div className="mt-4 space-y-2">
+                            <a
+                              href={`https://wa.me/2348143164423?text=${encodeURIComponent(
+                                `Hello, I'd like to checkout my order:\n\n${cart
+                                  .map(
+                                    (item) =>
+                                      `${item.name} - Size: ${item.size}, Qty: ${item.quantity}, Price: ₦${(
+                                        item.price * item.quantity
+                                      ).toLocaleString()}`
+                                  )
+                                  .join("\n")}\n\nTotal: ₦${getCartTotal().toLocaleString()}`
+                              )}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-full block bg-green-600 text-white py-2 rounded text-sm font-medium hover:bg-green-700 text-center"
+                            >
+                              Checkout via WhatsApp
+                            </a>
 
-    {/* Email Checkout */}
-    <a
-      href={`mailto:okojiebenjamin@gmail.com?subject=Order Checkout&body=${encodeURIComponent(
-        `Hello, I'd like to checkout my order:\n\n${cart
-          .map(
-            (item) =>
-              `${item.name} - Size: ${item.size}, Qty: ${item.quantity}, Price: ₦${(
-                item.price * item.quantity
-              ).toLocaleString()}`
-          )
-          .join("\n")}\n\nTotal: ₦${getCartTotal().toLocaleString()}`
-      )}`}
-      className="w-full block bg-blue-600 text-white py-2 rounded text-sm font-medium hover:bg-blue-700 text-center"
-    >
-      Checkout via Email
-    </a>
-  </div>
-)}
-
+                            <a
+                              href={`mailto:okojiebenjamin@gmail.com?subject=Order Checkout&body=${encodeURIComponent(
+                                `Hello, I'd like to checkout my order:\n\n${cart
+                                  .map(
+                                    (item) =>
+                                      `${item.name} - Size: ${item.size}, Qty: ${item.quantity}, Price: ₦${(
+                                        item.price * item.quantity
+                                      ).toLocaleString()}`
+                                  )
+                                  .join("\n")}\n\nTotal: ₦${getCartTotal().toLocaleString()}`
+                              )}`}
+                              className="w-full block bg-blue-600 text-white py-2 rounded text-sm font-medium hover:bg-blue-700 text-center"
+                            >
+                              Checkout via Email
+                            </a>
+                          </div>
+                        )}
                       </div>
                     </div>
                   )}
                 </div>
 
-                {/* Menu Button */}
+                {/* Menu Button (Desktop) */}
                 <div className="relative" ref={menuDropdownRef}>
                   <button
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    onClick={() => setIsMenuOpen((s) => !s)}
                     className="flex items-center space-x-1 text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200"
                   >
                     <Menu className="w-5 h-5" />
@@ -311,24 +271,17 @@ const Navbar = () => {
                   {/* Menu Dropdown */}
                   <div
                     className={`absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg border transform transition-all duration-300 origin-top-right ${
-                      isMenuOpen
-                        ? "opacity-100 scale-100 translate-y-0"
-                        : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                      isMenuOpen ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
                     }`}
                   >
                     <div className="py-2 max-h-96 overflow-y-auto">
                       {menuItems.map((item, index) => (
-                        <Link
-                          key={index}
-                          href={item.href}
-                          className="block w-full px-4 py-2 text-left hover:bg-gray-50 text-gray-900 transition-colors duration-150"
-                        >
+                        <Link key={index} href={item.href} className="block w-full px-4 py-2 text-left hover:bg-gray-50 text-gray-900 transition-colors duration-150">
                           {item.label}
                         </Link>
                       ))}
                     </div>
                   </div>
-
                 </div>
               </div>
             </>
@@ -342,80 +295,149 @@ const Navbar = () => {
                 <img src="/logo.jpg" alt="Luona Logo" className="h-8 w-auto" />
               </div>
 
-              {/* Right: Menu Button */}
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 text-gray-700 hover:text-gray-900 transition-colors duration-200"
-              >
-                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
+              {/* Right: Cart + Menu */}
+              <div className="flex items-center space-x-4">
+                {/* Cart Button (Mobile, moved out of dropdown) */}
+                <div className="relative" ref={cartRef}>
+                  <button
+                    onClick={() => setIsCartOpen((s) => !s)}
+                    className="p-2 text-gray-700 hover:text-gray-900 transition-colors duration-200 relative"
+                    aria-expanded={isCartOpen}
+                    aria-label="Open cart"
+                  >
+                    <ShoppingBag className="w-6 h-6" />
+                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                      {getCartCount()}
+                    </span>
+                  </button>
+
+                  {/* Mobile Cart Dropdown */}
+                  {isCartOpen && (
+                    <div className="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg border z-50">
+                      <div className="p-4">
+                        <h3 className="text-sm font-semibold text-black mb-2">Shopping Cart</h3>
+
+                        {cart.length === 0 ? (
+                          <p className="text-sm text-black">Your cart is empty</p>
+                        ) : (
+                          <ul className="divide-y divide-gray-200 max-h-64 overflow-y-auto">
+                            {cart.map((item, index) => (
+                              <li key={item.id ? `${item.id}-${item.size}` : index} className="py-2 flex items-center justify-between text-black">
+                                <div>
+                                  <p className="text-sm font-medium">{item.name}</p>
+                                  <p className="text-xs text-gray-600">Size: {item.size} | Qty: {item.quantity}</p>
+                                  <p className="text-xs text-gray-600">₦{(item.price * item.quantity).toLocaleString()}</p>
+                                </div>
+                                <button onClick={() => removeFromCart(index)} className="text-red-600 text-xs hover:underline">
+                                  Remove
+                                </button>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+
+                        {cart.length > 0 && (
+                          <div className="mt-4 space-y-2">
+                            <a
+                              href={`https://wa.me/2348143164423?text=${encodeURIComponent(
+                                `Hello, I'd like to checkout my order:\n\n${cart
+                                  .map(
+                                    (item) =>
+                                      `${item.name} - Size: ${item.size}, Qty: ${item.quantity}, Price: ₦${(
+                                        item.price * item.quantity
+                                      ).toLocaleString()}`
+                                  )
+                                  .join("\n")}\n\nTotal: ₦${getCartTotal().toLocaleString()}`
+                              )}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-full block bg-green-600 text-white py-2 rounded text-sm font-medium hover:bg-green-700 text-center"
+                            >
+                              Checkout via WhatsApp
+                            </a>
+
+                            <a
+                              href={`mailto:okojiebenjamin@gmail.com?subject=Order Checkout&body=${encodeURIComponent(
+                                `Hello, I'd like to checkout my order:\n\n${cart
+                                  .map(
+                                    (item) =>
+                                      `${item.name} - Size: ${item.size}, Qty: ${item.quantity}, Price: ₦${(
+                                        item.price * item.quantity
+                                      ).toLocaleString()}`
+                                  )
+                                  .join("\n")}\n\nTotal: ₦${getCartTotal().toLocaleString()}`
+                              )}`}
+                              className="w-full block bg-blue-600 text-white py-2 rounded text-sm font-medium hover:bg-blue-700 text-center"
+                            >
+                              Checkout via Email
+                            </a>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Menu Toggle (Mobile) */}
+                <button
+                  onClick={() => setIsMenuOpen((s) => !s)}
+                  className="p-2 text-gray-700 hover:text-gray-900 transition-colors duration-200"
+                >
+                  {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                </button>
+              </div>
             </>
           )}
         </div>
 
-        {/* Mobile Menu Dropdown */}
+        {/* Mobile Menu Dropdown (contains contact, search, and menu items) */}
         {isMobile && (
-          <div
-            className={`overflow-hidden transition-all duration-300 ease-in-out ${
-              isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-            }`}
-          >
+          <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}>
             <div className="py-4 border-t border-gray-200">
               {/* Contact Section */}
-              <div className="mb-8">
+              <div className="mb-8 px-4">
                 <button
-                  onClick={() =>
-                    setIsContactDropdownOpen(!isContactDropdownOpen)
-                  }
+                  onClick={() => setIsContactDropdownOpen((s) => !s)}
                   className="w-full flex items-center justify-between px-4 py-2 text-left text-gray-700 hover:bg-gray-50 font-medium"
                 >
                   <span>Contact Us</span>
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${
-                      isContactDropdownOpen ? "rotate-180" : ""
-                    }`}
-                  />
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isContactDropdownOpen ? "rotate-180" : ""}`} />
                 </button>
 
-                <div
-  className={`overflow-hidden transition-all duration-300 ${
-    isContactDropdownOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
-  }`}
->
-  <div className="bg-gray-50 mx-4 rounded-lg mt-2 mb-4">
-    {contactMethods.map((method, index) => {
-      let href = "#";
+                <div className={`overflow-hidden transition-all duration-300 ${isContactDropdownOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"}`}>
+                  <div className="bg-gray-50 rounded-lg mt-2 mb-4">
+                    {contactMethods.map((method, index) => {
+                      let href = "#";
 
-      if (method.label === "Phone") {
-        href = `tel:${method.value.replace(/\s+/g, "")}`;
-      } else if (method.label === "Email") {
-        href = `mailto:${method.value}`;
-      } else if (method.label === "WhatsApp") {
-        href = `https://wa.me/2348143164423`;
-      }
+                      if (method.label === "Phone") {
+                        href = `tel:${method.value.replace(/\s+/g, "")}`;
+                      } else if (method.label === "Email") {
+                        href = `mailto:${method.value}`;
+                      } else if (method.label === "WhatsApp") {
+                        href = `https://wa.me/2348143164423`;
+                      }
 
-      return (
-        <a
-          key={index}
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full block px-4 py-3 text-left hover:bg-gray-100 flex items-center space-x-3 transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg"
-        >
-          <method.icon className="w-5 h-5 text-gray-600" />
-          <div>
-            <div className="font-medium text-gray-900">{method.label}</div>
-            <div className="text-sm text-gray-600">{method.value}</div>
-          </div>
-        </a>
-      );
-    })}
-  </div>
-</div>
-
+                      return (
+                        <a
+                          key={index}
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full block px-4 py-3 text-left hover:bg-gray-100 flex items-center space-x-3 transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg"
+                        >
+                          <method.icon className="w-5 h-5 text-gray-600" />
+                          <div>
+                            <div className="font-medium text-gray-900">{method.label}</div>
+                            <div className="text-sm text-gray-600">{method.value}</div>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
 
-              {/* Search */}
+              {/* Search (mobile) */}
               <div className="mb-4 px-4">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -427,112 +449,14 @@ const Navbar = () => {
                 </div>
               </div>
 
-              {/* Cart (Mobile) */}
-<div className="px-4 py-2 border-t border-gray-200" ref={cartRef}>
-  <button
-    onClick={() => setIsCartOpen((s) => !s)}
-    className="w-full flex items-center space-x-3 text-left text-gray-700 hover:bg-gray-50 transition-colors duration-150"
-  >
-    <ShoppingBag className="w-5 h-5" />
-    <span>Cart ({cart.length})</span>
-  </button>
-
-  {/* Mobile Cart Dropdown */}
-  {isCartOpen && (
-    <div className="mt-2 bg-white rounded-lg shadow-lg border">
-      <div className="p-4">
-        <h3 className="text-sm font-semibold text-black mb-2">
-          Shopping Cart
-        </h3>
-
-        {cart.length === 0 ? (
-          <p className="text-sm text-black">Your cart is empty</p>
-        ) : (
-          <ul className="divide-y divide-gray-900 max-h-64 overflow-y-auto">
-            {cart.map((item, index) => (
-              <li
-                key={item.id ? `${item.id}-${item.size}` : index}
-                className="py-2 flex items-center justify-between text-black"
-              >
-                <div>
-                  <p className="text-sm font-medium text-black">{item.name}</p>
-                  <p className="text-xs text-gray-900">
-                    Size: {item.size} | Qty: {item.quantity}
-                  </p>
-                  <p className="text-xs text-gray-900">
-                    ₦{(item.price * item.quantity).toLocaleString()}
-                  </p>
-                </div>
-                <button
-                  onClick={() => removeFromCart(index)}
-                  className="text-red-900 text-xs hover:underline"
-                >
-                  Remove
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-
-       {cart.length > 0 && (
-  <div className="mt-4 space-y-2">
-    {/* WhatsApp Checkout */}
-    <a
-      href={`https://wa.me/2348143164423?text=${encodeURIComponent(
-        `Hello, I'd like to checkout my order:\n\n${cart
-          .map(
-            (item) =>
-              `${item.name} - Size: ${item.size}, Qty: ${item.quantity}, Price: ₦${(
-                item.price * item.quantity
-              ).toLocaleString()}`
-          )
-          .join("\n")}\n\nTotal: ₦${getCartTotal().toLocaleString()}`
-      )}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="w-full block bg-green-600 text-white py-2 rounded text-sm font-medium hover:bg-green-700 text-center"
-    >
-      Checkout via WhatsApp
-    </a>
-
-    {/* Email Checkout */}
-    <a
-      href={`mailto:okojiebenjamin@gmail.com?subject=Order Checkout&body=${encodeURIComponent(
-        `Hello, I'd like to checkout my order:\n\n${cart
-          .map(
-            (item) =>
-              `${item.name} - Size: ${item.size}, Qty: ${item.quantity}, Price: ₦${(
-                item.price * item.quantity
-              ).toLocaleString()}`
-          )
-          .join("\n")}\n\nTotal: ₦${getCartTotal().toLocaleString()}`
-      )}`}
-      className="w-full block bg-blue-600 text-white py-2 rounded text-sm font-medium hover:bg-blue-700 text-center"
-    >
-      Checkout via Email
-    </a>
-  </div>
-)}
-
-      </div>
-    </div>
-  )}
-</div>
-
-
-              {/* Menu Items */}
+              {/* Menu Items (mobile) */}
               <div className="border-t border-gray-200 mt-4 pt-4">
-  {menuItems.map((item, index) => (
-    <Link
-      key={index}
-      href={item.href}
-      className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50 transition-colors duration-150"
-    >
-      {item.label}
-    </Link>
-  ))}
-</div>
-
+                {menuItems.map((item, index) => (
+                  <Link key={index} href={item.href} onClick={() => setIsMenuOpen(false)} className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50 transition-colors duration-150">
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         )}
