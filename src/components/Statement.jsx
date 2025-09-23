@@ -44,23 +44,24 @@ export default function VisionMissionSection() {
             
             {/* Promotional Content */}
             <div className="lg:w-1/2 p-8 lg:p-12 text-center lg:text-left">
-              <h4 className="text-lg font-medium text-gray-600 mb-2 tracking-wide uppercase">
-                JOIN THE KINGS
-              </h4>
-              <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                GET 10% OFF YOUR ORDER
-              </h3>
-              <li>
-                <a 
-                  href="https://www.instagram.com/invites/contact/?igsh=1ofafxbo394x3&utm_content=pw07qmj" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-gray-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200"
-                >
-                  Claim Offer
-                </a>
-              </li>
-            </div>
+  <h4 className="text-lg font-medium text-gray-600 mb-2 tracking-wide uppercase">
+    JOIN THE KINGS
+  </h4>
+  <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+    GET 10% OFF YOUR ORDER
+  </h3>
+  <li>
+    <a 
+      href="https://ig.me/m/luonabrand?text=I%20want%20to%20claim%2010%%20off%20my%20order"  
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="bg-gray-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200"
+    >
+      Claim Offer
+    </a>
+  </li>
+</div>
+
           </div>
         </div>
       </div>
