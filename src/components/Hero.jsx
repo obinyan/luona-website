@@ -83,7 +83,7 @@ const HeroSection = () => {
               {slides.map((slide) => (
                 <div
                   key={slide.id}
-                  className="w-full flex-shrink-0 px-6 py-12 md:px-12 md:py-16"
+                  className="w-full flex-shrink-0 px-6 py-12 md:px-12"
                 >
                   <div className="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
                     {/* Slide Image */}
