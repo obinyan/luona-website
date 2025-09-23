@@ -64,7 +64,7 @@ const HeroSection = () => {
 
       <div className="relative z-10 container mx-auto px-2 sm:px-2 lg:px-3 min-h-screen flex flex-col justify-center items-center">
         {/* Top Heading (inline) */}
-        <div className="flex items-center justify-center pt-16 md:mb-10 space-x-3 flex-nowrap">
+        <div className="flex items-center justify-center pt-18 md:mb-4 space-x-3 flex-nowrap">
           <h1 className="text-lg sm:text-2x1 md:text-3xl lg:text-4xl font-bold text-black whitespace-nowrap">
             Wear LUONA...
           </h1>
@@ -74,7 +74,7 @@ const HeroSection = () => {
         </div>
 
         {/* Slideshow */}
-        <div className="relative w-full max-w-5xl mb-10">
+        <div className="relative w-full max-w-5xl ">
           <div className="relative overflow-hidden bg-white/30">
             <div
               className="flex transition-transform duration-700 ease-in-out"
@@ -98,7 +98,7 @@ const HeroSection = () => {
 
                     {/* Slide Text */}
                     <div className="text-center md:text-left">
-                      <div className="mb-4">
+                      <div className="mb-1">
                         <span className="text-sm md:text-base font-medium text-gray-600 tracking-widest uppercase">
                           {slide.title}
                         </span>
