@@ -49,16 +49,16 @@ const HeroSection = () => {
   }, [slides.length]);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden  pb-16">
+    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       {/* Background Logo Image (faded) */}
       <div
   className="
     absolute inset-0 bg-center bg-no-repeat opacity-15 pointer-events-none
-    bg-[length:450%]     /* Mobile (default) */
+    bg-[length:200%]     /* Mobile (default) */
     sm:bg-[length:150%]  /* Small screens and up */
     md:bg-[length:120%]  /* Medium and up */
   "
-  style={{ backgroundImage: "url('/logo main 2.png')" }}
+  style={{ backgroundImage: "url('/logo main.png')" }}
 ></div>
 
 
