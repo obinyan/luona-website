@@ -55,14 +55,14 @@ const HeroSection = () => {
   className="
     absolute inset-0 bg-center bg-no-repeat opacity-15 pointer-events-none
     bg-[length:200%]     /* Mobile (default) */
-    sm:bg-[length:150%]  /* Small screens and up */
-    md:bg-[length:120%]  /* Medium and up */
+    sm:bg-[length:120%]  /* Small screens and up */
+    md:bg-[length:100%]  /* Medium and up */
   "
   style={{ backgroundImage: "url('/logo main.png')" }}
 ></div>
 
 
-      <div className="relative z-10 container mx-auto px-3 sm:px-4 lg:px-6 min-h-screen flex flex-col justify-center items-center">
+      <div className="relative z-10 container mx-auto px-3 sm:px-3 lg:px-6 min-h-screen flex flex-col justify-center items-center">
         {/* Top Heading (inline) */}
         <div className="flex items-center justify-center pt-12 md:mb-10 space-x-3 flex-nowrap">
           <h1 className="text-lg sm:text-2x1 md:text-3xl lg:text-4xl font-bold text-black whitespace-nowrap">
