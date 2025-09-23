@@ -54,7 +54,7 @@ const HeroSection = () => {
       <div
   className="
     absolute inset-0 bg-center bg-no-repeat opacity-15 pointer-events-none
-    bg-[length:200%]     /* Mobile (default) */
+    bg-[length:230%]     /* Mobile (default) */
     sm:bg-[length:100%]  /* Small screens and up */
     md:bg-[length:80%]  /* Medium and up */
   "
@@ -120,7 +120,7 @@ const HeroSection = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center z-20 relative">
+        <div className="text-center z-20 relative pb-16">
           <Link href="/store">
             <button className="group inline-flex items-center px-8 py-4 md:px-10 md:py-5 bg-transparent border-2 border-black text-black font-semibold text-lg md:text-xl rounded-full hover:bg-black hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
               <span className="mr-3">Shop Now</span>
